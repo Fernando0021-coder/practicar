@@ -4,11 +4,15 @@ Web estática de estudio para el primer parcial de **Redes y Comunicaciones (RC3
 
 ## Abrir el examen
 
-**Solo necesitas el archivo `index.html`**: ábrelo con un navegador. Contiene todos los estilos, las 100 preguntas y la lógica del examen. Funciona sin conexión y sin instalar nada.
+**Solo necesitas el archivo `index.html`**: ábrelo con un navegador. Contiene todos los estilos, las 122 preguntas y la lógica del examen. Funciona sin conexión y sin instalar nada.
+
+## Temas prioritarios
+
+Botón **Practicar solo estos temas**: abre un simulacro exclusivo de 60 preguntas que abarca los temas señalados en los mensajes del grupo, además de un glosario de abreviaturas. Esta priorización no equivale a confirmación oficial del docente.
 
 ## Qué incluye
 
-- **100 preguntas**: 50 de verdadero/falso y 50 de triple elección.
+- **122 preguntas**: 50 preguntas originales de verdadero/falso, 50 de triple elección y 22 de refuerzo prioritario.
 - **Sin justificar los falsos**: solo selecciona V o F.
 - Pistas opcionales que se muestran antes de contestar.
 - Corrección inmediata con explicaciones de los aciertos y los errores, incluidas razones específicas para descartar cada alternativa de triple elección.
