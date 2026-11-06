@@ -15,7 +15,23 @@
 @media (max-width:700px){.shell{padding:0 17px}.topbar{height:71px}.brand{font-size:19px}.brand-sub,.header-tag{display:none}.hero{padding:43px 0 32px}.hero h1{font-size:clamp(35px,9.1vw,54px);margin:17px 0 14px}.hero-copy{font-size:14px;line-height:1.8}.hero-stats{gap:13px;margin-top:24px}.stat{padding-right:15px}.stat strong{font-size:23px}.stat span{font-size:10px}.setup-panel{padding:22px}.panel-heading h2{font-size:21px}.right-column{grid-template-columns:1fr}.insight-card{padding:25px}.insight-icon{margin-bottom:17px}.insight-card h2{font-size:24px}.field-group{margin-top:23px}.field-head span{font-size:10px}.segment{font-size:11px;padding:8px 5px}.count-option{min-width:52px;padding:10px}.quiz-head{margin:23px 0 15px}.quiz-head-right{gap:10px}.quiz-counter,.quiz-timer{font-size:11px}.quiz-layout{grid-template-columns:1fr;margin-top:19px}.quiz-aside{display:none}.question-card{padding:22px 18px;min-height:0}.question-title{font-size:23px;margin-bottom:24px}.question-source{margin-top:24px}.answer-option{font-size:14px;padding:14px 11px;min-height:60px}.question-footer{flex-direction:column;align-items:stretch}.question-footer>span{font-size:11px}.next-btn{width:100%}.feedback{padding:15px}.results-hero{padding:25px 20px;flex-direction:column;align-items:flex-start}.score-ring{align-self:center}.result-metrics{grid-template-columns:repeat(2,1fr);gap:9px}.result-metric{padding:14px}.result-metric strong{font-size:23px}.results-actions>.primary-btn,.results-actions>.secondary-btn{width:100%}.review-panel{padding:18px}.unit-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.site-footer{margin-top:35px;line-height:1.7}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
-  </style>
+  
+/* Refuerzo de temas señalados para el parcial */
+.priority-panel{padding:27px;background:linear-gradient(155deg,#193348,#111f31 72%);border-color:#52778a}
+.priority-head{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.11em;font-weight:850;color:#99eaf9}
+.priority-panel h2{font-size:24px;line-height:1.25;margin:13px 0 10px;letter-spacing:-.035em}
+.priority-panel p{color:#b8cde0;font-size:13px;line-height:1.7;margin:0 0 16px}
+.priority-tags{display:flex;flex-wrap:wrap;gap:7px;margin:17px 0}
+.priority-tags span{padding:6px 9px;border-radius:8px;background:#2e486184;color:#e3f3ff;border:1px solid #56728a5c;font-size:11px;font-weight:650}
+.priority-panel .primary-btn{width:100%;gap:8px;min-height:51px;margin:9px 0 14px;font-size:13px}
+.priority-panel details{border-top:1px solid #3d5870;margin-top:8px;padding-top:13px}
+.priority-panel summary{cursor:pointer;color:#b8f7e5;font-size:13px;font-weight:740}
+.priority-panel details p{font-size:11px;margin:10px 0}
+.glossary-grid{display:grid;grid-template-columns:1fr;gap:7px;margin-top:12px;max-height:380px;overflow:auto;padding-right:6px}
+.glossary-item{font-size:12px;color:#b9cad9;line-height:1.5;border-bottom:1px solid #ffffff10;padding-bottom:7px}
+.glossary-item strong{color:#e6fcf7;font-size:12px}
+.priority-note{font-size:11px!important;color:#92abc0!important;margin-bottom:0!important}
+</style>
 
 </head>
 <body>
@@ -75,6 +91,47 @@
             <p class="small-note">Sin registros ni cuentas. Las estadísticas se guardan únicamente en este navegador.</p>
           </section>
           <aside class="right-column">
+
+            <div class="panel priority-panel" aria-label="Repaso de temas prioritarios">
+              <div class="priority-head">✦ TEMAS PRIORIZADOS · PARCIAL</div>
+              <h2>Lo que te avisaron que entra</h2>
+              <p>Practica los temas mencionados en los mensajes: sin dejar que el sorteo normal se salte alguno.</p>
+              <div class="priority-tags">
+                <span>Modulación</span><span>Síncrona y asíncrona</span><span>Paridad</span><span>HDLC + bit stuffing</span><span>BSC · ACK0/ACK1 · NAK</span><span>SVC y PVC</span><span>Switch y MAC</span><span>LAN y bus</span><span>Capa 3 · transporte</span><span>ASCII y siglas</span>
+              </div>
+              <button id="priority-btn" class="primary-btn" type="button"><span>Practicar solo estos temas</span><span aria-hidden="true">↗</span></button>
+              <details><summary>Ver glosario de siglas y conceptos</summary>
+                <p>Abreviaturas incluidas en la guía y en los mensajes. Algunas se explican por su función en lugar de desarrollar su nombre completo.</p>
+                <div class="glossary-grid"><div class="glossary-item"><strong>ETD / ETCD</strong> — terminal de datos / equipo de comunicación de datos (módem).</div>
+<div class="glossary-item"><strong>bps / baudios</strong> — bits por segundo / cambios de señal por segundo.</div>
+<div class="glossary-item"><strong>ASCII</strong> — código tradicional de caracteres de 7 bits (128 símbolos).</div>
+<div class="glossary-item"><strong>EBCDIC / Baudot</strong> — códigos de caracteres de 8 y 5 bits, respectivamente.</div>
+<div class="glossary-item"><strong>UTF-8</strong> — codificación Unicode de longitud variable.</div>
+<div class="glossary-item"><strong>ASK / FSK / PSK / QAM</strong> — modulación por amplitud / frecuencia / fase / amplitud y fase.</div>
+<div class="glossary-item"><strong>CRC / FCS</strong> — comprobación de errores / campo de verificación de trama.</div>
+<div class="glossary-item"><strong>ARQ / FEC</strong> — retransmisión para corregir errores / corrección directa.</div>
+<div class="glossary-item"><strong>BSC</strong> — Binary Synchronous Communications (Bisync), protocolo de IBM orientado a carácter.</div>
+<div class="glossary-item"><strong>ENQ</strong> — solicita iniciar el intercambio o pedir la línea en BSC.</div>
+<div class="glossary-item"><strong>ACK0 / ACK1</strong> — acuses de recepción alternados en BSC.</div>
+<div class="glossary-item"><strong>NAK</strong> — respuesta negativa; provoca retransmisión del bloque erróneo.</div>
+<div class="glossary-item"><strong>BCC</strong> — comprobación de errores del bloque en el diálogo BSC de la guía; no es un protocolo aparte.</div>
+<div class="glossary-item"><strong>EOT</strong> — fin de transmisión en BSC.</div>
+<div class="glossary-item"><strong>DLE / STX / ETX</strong> — caracteres usados para delimitar el comienzo y fin de texto transparente.</div>
+<div class="glossary-item"><strong>HDLC</strong> — protocolo de enlace orientado a bits; bandera 01111110.</div>
+<div class="glossary-item"><strong>SDLC</strong> — protocolo de enlace de IBM para SNA; usa modo NRM según la guía.</div>
+<div class="glossary-item"><strong>NRM / ARM / ABM</strong> — modos de transmisión de estaciones en HDLC.</div>
+<div class="glossary-item"><strong>LAPB / PLP</strong> — enlace y paquete en los niveles 2 y 3 de X.25.</div>
+<div class="glossary-item"><strong>SVC / PVC</strong> — circuito virtual conmutado / circuito virtual permanente.</div>
+<div class="glossary-item"><strong>PAN / LAN / MAN / WAN</strong> — red personal / local / metropolitana / de área amplia.</div>
+<div class="glossary-item"><strong>P2P</strong> — entre pares; los equipos pueden ofrecer y solicitar servicios.</div>
+<div class="glossary-item"><strong>OSI</strong> — modelo de referencia de siete capas.</div>
+<div class="glossary-item"><strong>MAC / IP</strong> — dirección física de enlace (48 bits en la guía) / dirección lógica de red.</div>
+<div class="glossary-item"><strong>TCP / UDP</strong> — protocolos de transporte; TCP es confiable y UDP no garantiza entrega.</div>
+<div class="glossary-item"><strong>HTTP / HTTPS / DNS</strong> — web / web segura / resolución de nombres.</div>
+<div class="glossary-item"><strong>ISO / UIT-T / IEEE / IETF</strong> — organismos de normalización citados en la guía.</div></div>
+              </details>
+              <p class="priority-note">Temas destacados según los mensajes compartidos, no una confirmación oficial del profesor.</p>
+            </div>
             <div class="insight-card"><div class="insight-icon" aria-hidden="true">✦</div><span class="section-kicker">ASÍ FUNCIONA</span><h2>Entiende cada respuesta, no solo memorices.</h2><div class="mini-divider"></div>
               <div class="feature"><span class="feature-number">01</span><div><strong>Pista opcional</strong><p>Recibe una orientación antes de contestar.</p></div></div>
               <div class="feature"><span class="feature-number">02</span><div><strong>Explicación inmediata</strong><p>Descubre por qué tu opción es correcta o incorrecta.</p></div></div>
@@ -225,6 +282,34 @@
     v(4,48,'DNS convierte un nombre de dominio en una dirección IP cuando el navegador necesita localizar un servidor.',true,'Es una de las primeras acciones al abrir una web.','Es verdadero: la guía indica que DNS permite resolver el nombre a una IP antes de establecer la comunicación.','Navegación web','-extra'),
     m(4,48,'¿Qué capa finalmente envía los bits por el cable o por el aire al navegar por una web?',['Física (1)','Transporte (4)','Aplicación (7)'],0,'Es la capa más baja del modelo.','La capa física transmite los bits mediante señales sobre el medio.',['','Transporte organiza segmentos, no transmite directamente las señales físicas.','Aplicación prepara solicitudes y servicios, pero no es quien transmite señales eléctricas u ópticas.'],'Navegación web','-extra')
   ];
+
+  // Refuerzo extra: temas mencionados en las capturas del grupo del parcial.
+  // Referencias conservadas según la pregunta correspondiente del cuestionario.
+  bank.push(
+    m(1,7,'¿En qué se diferencian bps y baudios?',['bps cuenta bits por segundo; baudios, cambios de señal por segundo','Son dos nombres para la longitud de un cable','baudios cuenta bits de parada y bps cuenta errores'],0,'No todo cambio de señal lleva necesariamente un solo bit.','bps mide cuántos bits se transmiten por segundo; baudios mide los símbolos o cambios de señal por segundo.',['','La longitud de un cable no define estas velocidades.','Los bits de parada y los errores no son sus definiciones.'],'Velocidad de modulación','-prior01'),
+    m(1,9,'En una transmisión asíncrona de 1 inicio + 8 datos + 1 parada, ¿cuál es la eficiencia?',['100 %','80 %','10 %'],1,'Divide bits útiles entre todos los bits transmitidos.','Ocho de los diez bits son datos: 8/10 = 80 %.',['Los bits de inicio y de parada consumen capacidad.','','10 % no corresponde a 8 bits útiles de 10.'],'Transmisión asíncrona','-prior02'),
+    m(1,11,'¿Qué modulación cambia la frecuencia de la señal portadora?',['ASK','FSK','PSK'],1,'La F corresponde a frecuencia.','FSK varía la frecuencia. ASK modifica amplitud, PSK la fase y QAM amplitud y fase.',['ASK modifica la amplitud.','','PSK modifica la fase.'],'Modulación','-prior03'),
+    m(1,12,'Para paridad par, ¿qué bit agregas a la secuencia 1000011?',['0','1','No se agrega ninguno'],1,'Primero cuenta cuántos unos aparecen.','1000011 contiene tres unos. Agrega un 1 para obtener cuatro unos, una cantidad par.',['Con 0 seguiría habiendo tres unos, una cantidad impar.','','Se necesita el bit de paridad solicitado.'],'Bit de paridad','-prior04'),
+    v(2,18,'En BSC, ACK0 y ACK1 se alternan para identificar a qué bloque corresponde la confirmación.',true,'Los números ayudan a distinguir bloques sucesivos.','Es verdadero: en el diálogo típico de BSC se alternan ACK0 y ACK1 como confirmaciones de bloques.','ACK0 y ACK1','-prior05'),
+    m(2,18,'Si BSC detecta un error en BCC al recibir un bloque, ¿qué debe responder el receptor?',['ACK1','NAK','EOT'],1,'Se necesita solicitar un nuevo envío, no aceptar el bloque.','NAK indica recepción incorrecta y el emisor retransmite el bloque.',['ACK1 confirmaría recepción, por lo que no corresponde aceptar un bloque erróneo.','','EOT termina la comunicación, no solicita retransmisión.'],'BCC y NAK','-prior06'),
+    m(2,18,'En el diálogo típico de BSC, ¿qué ocurre después de que A envía ENQ y B responde ACK0?',['A envía el bloque 1 y B responde ACK1','A envía EOT de inmediato','B comienza a enviar tramas HDLC'],0,'Recuerda el orden del ejemplo de la pregunta 18.','El diálogo descrito en la guía sigue: ENQ → ACK0 → bloque 1 → ACK1.',['','EOT aparece al terminar el intercambio.','El ejemplo trata BSC, no el protocolo HDLC.'],'Pregunta 18 · diálogo BSC','-prior07'),
+    v(2,21,'En HDLC el emisor inserta un bit 1 después de cinco ceros consecutivos.',false,'La regla se aplica a los unos y añade un cero.','Es falso: cuando los datos contienen cinco unos consecutivos, se inserta un 0 para evitar que aparezca la bandera 01111110 dentro de los datos.','Relleno de bits HDLC','-prior08'),
+    m(2,21,'¿Para qué inserta HDLC un 0 después de cinco unos consecutivos?',['Para que la bandera 01111110 no aparezca dentro de los datos','Para aumentar el tamaño del paquete IP','Para convertir el mensaje a ASCII'],0,'Se trata de impedir una confusión con el delimitador de trama.','El bit stuffing evita que los datos se confundan con la bandera especial de inicio y fin de trama.',['','El tamaño de los paquetes IP es otro nivel de comunicación.','No es un sistema de codificación de caracteres.'],'Relleno de bits HDLC','-prior09'),
+    m(2,27,'¿Qué significa PVC en la comparación de circuitos virtuales?',['Circuito que se configura y permanece disponible','Circuito que se crea y libera con cada llamada','Código de verificación de paquetes'],0,'La última letra representa «permanente».','PVC es un circuito virtual permanente, configurado para estar disponible; SVC se establece y se libera según la comunicación.',['','Esa es la característica de SVC.','No describe un mecanismo de detección de errores.'],'PVC y SVC','-prior10'),
+    m(3,29,'¿Qué ámbito cubre normalmente una LAN?',['Una persona y sus auriculares','Una sala, edificio o campus','Todos los continentes'],1,'Piensa en la red de una casa o laboratorio informático.','LAN es una red de área local, como la de una casa, edificio, sala o campus.',['Es un caso típico de PAN.','','El alcance global corresponde a la interconexión de redes como Internet.'],'Qué es una LAN','-prior11'),
+    m(3,32,'¿Cómo se conectan los equipos en una topología de bus?',['A un medio principal compartido','Todos a un switch central en enlaces independientes','Cada equipo con todos los demás'],0,'Bus no es estrella ni malla.','En bus los equipos comparten un medio principal de comunicación.',['','Esa es la topología en estrella.','Esa es la malla completa.'],'Topología de bus','-prior12'),
+    v(3,32,'En la topología de bus, cada equipo necesita su propio cable hasta un switch central.',false,'Un bus se diferencia de la estrella por el medio compartido.','Es falso: en bus se comparte un cable o medio principal; en estrella cada equipo tiene un enlace al nodo central.','Topología de bus','-prior13'),
+    m(4,38,'¿Cómo se llama la unidad de datos de la capa 3 del modelo OSI?',['Trama','Paquete','Bit'],1,'La capa 2 usa tramas y la capa 1 transporta bits.','La capa de red (3) maneja paquetes. Enlace (2) maneja tramas y Física (1) maneja bits.',['Las tramas corresponden a la capa 2.','','Los bits corresponden a la capa 1.'],'Unidad de datos de capa 3','-prior14'),
+    m(4,46,'¿Cuál es la unidad de datos indicada para la capa de transporte (4)?',['Segmento','Trama','Paquete'],0,'Está encima de la capa que usa paquetes.','La guía identifica la capa 4 con segmentos; la 3 con paquetes; la 2 con tramas.',['','La trama es de capa de enlace (2).','El paquete es de capa de red (3).'],'Capa de transporte','-prior15'),
+    m(4,43,'¿Cuál es la diferencia entre un hub, un switch y un router?',['Hub capa 1; switch capa 2; router capa 3','Todos actúan exclusivamente en capa 7','Hub capa 3; switch capa 1; router capa 2'],0,'Asocia señal → MAC → IP.','Hub repite señales (1); switch reenvía por dirección MAC (2); router decide rutas usando direcciones IP (3).',['','No realizan únicamente funciones de aplicación.','Confunde el orden de los dispositivos y capas.'],'Switch · hub · router','-prior16'),
+    m(4,41,'Según la guía, ¿cuántos bits tiene una dirección MAC?',['32 bits','48 bits','64 bits'],1,'Su longitud clásica es de seis bytes.','Una dirección MAC clásica tiene 48 bits (6 bytes), se expresa en hexadecimal y sirve para el enlace local.',['32 bits corresponde a IPv4.','','No es la longitud de MAC indicada en el material.'],'Dirección MAC','-prior17'),
+    m(4,46,'¿Qué es un puerto de red según la guía?',['Un número de 16 bits que identifica un programa o servicio','Una dirección MAC de 48 bits','El conector RJ45 solamente'],0,'HTTP 80, HTTPS 443 y DNS 53 son ejemplos.','Un puerto es un número de 0 a 65535 usado para identificar servicios; IP + puerto forman un socket según la guía.',['','La MAC es una dirección de enlace, no un número de puerto.','Los puertos aquí son lógicos, no conectores físicos.'],'Puerto y socket','-prior18'),
+    m(1,8,'¿Cuántos bits usa ASCII tradicional?',['5','7','8'],1,'El código permite 128 combinaciones.','ASCII tradicional se describe en la guía con 7 bits. Baudot usa 5 y EBCDIC usa 8.',['5 bits corresponde a Baudot.','','8 bits corresponde a EBCDIC en esta comparación.'],'ASCII y códigos','-prior19'),
+    m(2,17,'¿Qué sigla corresponde al protocolo de IBM orientado a caracteres, síncrono y semidúplex?',['BSC','HDLC','SDLC'],0,'En el chat aparece escrito como SBC, pero el nombre en la guía es BSC.','BSC (Bisync) es el protocolo de IBM descrito con esas características.',['','HDLC está orientado a bits.','SDLC también está orientado a bits.'],'Siglas: BSC','-prior20'),
+    m(2,18,'En el diálogo BSC, ¿cuál de estas relaciones es correcta?',['ACK confirma; NAK pide retransmisión; EOT termina','NAK confirma; EOT pide retransmisión; ACK termina','BCC es otro nombre para HDLC'],0,'Piensa en confirmar, rechazar y finalizar.','ACK confirma la recepción, NAK señala que se debe retransmitir y EOT finaliza la transmisión.',['','Invierte las funciones reales de las señales de control.','BCC es la comprobación mencionada para detectar un bloque incorrecto; no es HDLC.'],'Siglas: ACK · NAK · EOT · BCC','-prior21'),
+    v(4,38,'En el modelo OSI, la unidad de datos de la capa 2 es el paquete y la de la capa 3 es la trama.',false,'Están intercambiadas.','Es falso: la capa 2 utiliza tramas, la capa 3 paquetes y la capa 4 segmentos.','Unidades de datos OSI','-prior22')
+  );
+
   window.BANCO_PREGUNTAS = Object.freeze(bank.map(q=>Object.freeze(q)));
 })();
 
@@ -235,6 +320,7 @@
   const BANK = window.BANCO_PREGUNTAS || [];
   const KEY = 'practicar-rc34-history-v1';
   const UNIT_NAMES = {1:'Teleprocesamiento',2:'Protocolos',3:'Redes de computadoras',4:'Modelo OSI'};
+  const PRIORITY_REFS = new Set([1,7,8,9,11,12,17,18,20,21,27,29,32,38,41,43,44,46]);
   const $ = id => document.getElementById(id);
   let chosenType = 'mixed';
   let chosenCount = '20';
@@ -303,11 +389,15 @@
     }
     return result;
   }
-  function startPractice(reviewIds) {
+  function startPractice(reviewIds,onlyPriority=false) {
     let pool,chosen;
     if(Array.isArray(reviewIds)) {
       const ids=new Set(reviewIds);
       pool=BANK.filter(q=>ids.has(q.id));
+      chosen=pool.length;
+    } else if(onlyPriority) {
+      // Todas las referencias prioritarias, sin depender del sorteo ni del filtro normal.
+      pool=BANK.filter(q=>PRIORITY_REFS.has(q.ref));
       chosen=pool.length;
     } else {
       pool=filteredBank();
@@ -315,7 +405,7 @@
     }
     if(!pool.length||!chosen){$('config-error').textContent='Selecciona al menos una unidad con preguntas disponibles.';$('config-error').hidden=false;show('start-screen');return;}
     if(session?.ticker)clearInterval(session.ticker);
-    session={questions:chooseQuestions(pool,chosen),index:0,answers:[],hinted:new Set(),started:Date.now(),ticker:null,review:Array.isArray(reviewIds)};
+    session={questions:chooseQuestions(pool,chosen),index:0,answers:[],hinted:new Set(),started:Date.now(),ticker:null,review:Array.isArray(reviewIds),priority:onlyPriority};
     session.ticker=setInterval(()=>{$('timer').textContent=formatTime(Date.now()-session.started);},1000);
     $('timer').textContent='00:00';
     show('quiz-screen'); renderQuestion();
@@ -331,7 +421,7 @@
     if(!q){finishPractice();return;}
     $('question-category').textContent=`UNIDAD ${['','I','II','III','IV'][q.unit]} · ${UNIT_NAMES[q.unit]}`;
     $('question-type').textContent=q.type==='vf'?'Verdadero o falso':'Triple elección';
-    $('question-source').textContent=`Tema: ${q.topic} · Basada en la pregunta ${q.ref} de la guía`;
+    $('question-source').textContent=`${session.priority?'★ Tema prioritario · ':''}Tema: ${q.topic} · Basada en la pregunta ${q.ref} de la guía`;
     $('question-title').textContent=q.question;
     $('progress-label').textContent=`Pregunta ${session.index+1} / ${session.questions.length}`;
     $('progress-fraction').textContent=String(session.index+1).padStart(2,'0');
@@ -456,6 +546,7 @@
     document.querySelectorAll('#type-options button').forEach(btn=>btn.addEventListener('click',()=>{chosenType=btn.dataset.type;paintConfig();}));
     document.querySelectorAll('#count-options button').forEach(btn=>btn.addEventListener('click',()=>{chosenCount=btn.dataset.count;paintConfig();}));
     $('start-btn').addEventListener('click',()=>startPractice());
+    $('priority-btn').addEventListener('click',()=>startPractice(undefined,true));
     $('hint-btn').addEventListener('click',showHint);
     $('next-btn').addEventListener('click',nextQuestion);
     $('exit-btn').addEventListener('click',()=>{if(window.confirm('¿Salir del examen? Se perderán las respuestas de esta sesión.'))home();});
