@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08111f">
+  <meta name="description" content="Simulador de examen de Redes y Comunicaciones — unidades I a IV. Verdadero o falso, triple elección, pistas, retroalimentación y repaso de errores.">
+  <title>Practicar | Simulador RC34</title>
+  <style>
+:root{color-scheme:dark;--bg:#08111f;--surface:#101d30;--surface2:#14243a;--surface3:#1b2c44;--border:#2a3a50;--text:#f3f7ff;--muted:#99a9bb;--teal:#6fe8c9;--teal-dark:#113c38;--purple:#b0a5ff;--red:#ff908f;--red-bg:#36232f;--green-bg:#13382f;--radius:22px;--shadow:0 18px 80px #00000026}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--teal);outline-offset:4px}a{color:inherit;text-decoration:none}[hidden]{display:none!important}::selection{background:#6fe8c959;color:white}.ambient{position:fixed;pointer-events:none;z-index:-1;border-radius:50%;filter:blur(90px);opacity:.21}.ambient-one{width:580px;height:580px;right:-250px;top:-240px;background:#347a94}.ambient-two{width:460px;height:460px;left:-250px;top:380px;background:#473f91}.shell{max-width:1230px;margin:auto;padding:0 36px}.topbar{height:94px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff13}.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;letter-spacing:-.8px}.brand-symbol{display:flex;align-items:center;justify-content:center;width:39px;height:39px;border-radius:12px;background:var(--teal);color:#081a21;font-size:25px;letter-spacing:-3px}.brand-dot{color:#fff}.brand-sub{font-size:12px;font-weight:500;color:var(--muted);letter-spacing:.02em}.header-tag{border:1px solid var(--border);color:#c8d7e6;font-size:12px;border-radius:999px;padding:8px 13px;white-space:nowrap}.online-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);margin-right:6px;box-shadow:0 0 12px #6fe8c98c}.screen{animation:appear .28s ease both}@keyframes appear{from{opacity:.55;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}.hero{padding:76px 0 53px;max-width:820px}.eyebrow,.section-kicker{color:var(--teal);font-weight:700;letter-spacing:.15em;font-size:11px}.eyebrow{display:flex;align-items:center;gap:12px}.eyebrow-line{height:1px;width:24px;background:var(--teal)}.hero h1{font-size:clamp(42px,5.2vw,71px);line-height:1.1;letter-spacing:-.065em;margin:22px 0 20px;font-weight:800}.gradient-text{background:linear-gradient(90deg,#77ebd6,#8fb9ff,#bfadff);color:transparent;background-clip:text}.hero-copy{max-width:670px;font-size:17px;color:#b6c4d4;margin:0;line-height:1.8}.hero-stats{display:flex;align-items:stretch;gap:31px;margin-top:34px}.stat{display:flex;flex-direction:column;padding-right:32px;border-right:1px solid var(--border)}.stat:last-child{border:0}.stat strong{font-size:26px;letter-spacing:-.035em;font-weight:780;line-height:1.25}.stat span{font-size:12px;color:var(--muted);margin-top:2px}.start-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);gap:24px;align-items:start}.panel{background:linear-gradient(140deg,#132237,#101c2e);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.setup-panel{padding:34px}.panel-heading{display:flex;justify-content:space-between;align-items:center;gap:15px}.panel-heading h2{font-size:23px;letter-spacing:-.035em;margin:7px 0 0}.step-label{color:#70859b;font-size:12px;white-space:nowrap;font-weight:700}.field-group{margin-top:30px}.field-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:13px}.field-head h3{font-size:14px;font-weight:680;margin:0}.field-head span{font-size:12px;color:var(--muted)}.unit-list{display:grid;gap:9px}.unit-option{display:flex;align-items:center;gap:12px;min-height:51px;border:1px solid #35465a;border-radius:12px;padding:10px 13px;cursor:pointer;transition:background .15s,border .15s;position:relative}.unit-option:has(input:checked){border-color:#59b9aa;background:#143b3d66}.unit-option:hover{background:#ffffff09}.unit-option input{position:absolute;opacity:0;width:1px;height:1px}.unit-option:has(input:focus-visible){outline:2px solid var(--teal);outline-offset:2px}.unit-check{width:19px;height:19px;border:1px solid #66758b;display:grid;place-items:center;border-radius:5px;font-size:12px;color:transparent;flex-shrink:0}.unit-option:has(input:checked) .unit-check{background:var(--teal);border-color:var(--teal);color:#0d2528}.unit-number{font-size:12px;color:var(--teal);font-weight:800;letter-spacing:.09em}.unit-name{font-weight:600;font-size:13px}.segmented{display:grid;grid-template-columns:repeat(3,1fr);padding:5px;border:1px solid var(--border);border-radius:13px;background:#0a1626}.segment{min-height:40px;padding:8px 10px;color:#a9bad0;border:0;border-radius:9px;background:transparent;font-size:12px;font-weight:650}.segment.selected{background:#2a4256;color:#e5fff8;box-shadow:0 2px 8px #0002}.count-options{display:flex;gap:8px;flex-wrap:wrap}.count-option{border:1px solid #344359;background:#101c2b;color:#aebcd0;min-width:58px;padding:10px 13px;border-radius:10px;font-size:13px;font-weight:750}.count-option.selected{border-color:var(--teal);background:#174640;color:#b9ffeb}.count-option:not(:disabled):hover,.secondary-btn:hover{border-color:var(--teal)}.primary-btn{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;border:0;background:var(--teal);color:#071b22;font-weight:800;border-radius:12px;padding:15px 19px;min-height:51px;transition:filter .2s,transform .2s}.primary-btn:hover:not(:disabled){filter:brightness(1.08);transform:translateY(-1px)}.setup-panel>.primary-btn{width:100%;margin-top:29px}.small-note{font-size:11px;color:#8294ab;text-align:center;margin:13px 0 0}.form-error{color:var(--red);font-size:13px;margin-bottom:0}.right-column{display:grid;gap:22px}.insight-card{padding:34px;background:radial-gradient(ellipse at 95% 0%,#2c4558 0%,#17283d 42%,#101d30 100%);border:1px solid #344359;border-radius:var(--radius)}.insight-icon{font-size:30px;width:52px;height:52px;border:1px solid #6fe8c975;display:grid;place-items:center;color:var(--teal);border-radius:15px;margin-bottom:28px}.insight-card h2{font-size:28px;line-height:1.25;letter-spacing:-.043em;margin:11px 0 23px}.mini-divider{height:1px;background:#ffffff1b;margin:22px 0}.feature{display:flex;align-items:flex-start;gap:15px;margin-top:23px}.feature-number{font-size:11px;color:var(--teal);border:1px solid #70e9d444;padding:5px 8px;border-radius:8px;font-weight:750}.feature strong{font-size:14px}.feature p{font-size:12px;color:#a9bbcf;margin:4px 0 0;line-height:1.6}.last-session{padding:23px 26px;display:flex;align-items:flex-start;gap:18px;justify-content:space-between;flex-wrap:wrap}.last-session h3{font-size:17px;margin:7px 0 4px;letter-spacing:-.025em}.last-session p{color:var(--muted);font-size:12px;margin:0}.secondary-btn{border:1px solid #4a6077;background:transparent;color:#e0eaf3;padding:11px 14px;border-radius:10px;font-size:12px;font-weight:730;display:inline-flex;align-items:center;justify-content:space-between;gap:15px;transition:border-color .15s}.last-session .secondary-btn{width:100%}.site-footer{display:flex;gap:30px;justify-content:space-between;flex-wrap:wrap;padding:33px 0 40px;margin-top:55px;border-top:1px solid #ffffff15;color:#7f92a8;font-size:11px}.site-footer>span:first-child{font-weight:700;color:#a6b9cc}.footer-accent{color:var(--teal)}
+/* Preguntas */.quiz-head{display:flex;align-items:center;justify-content:space-between;margin:38px 0 19px;gap:16px}.quiet-button{background:transparent;border:0;padding:8px 0;color:#a8bacb;font-size:13px;font-weight:650}.quiet-button:hover{color:var(--teal)}.quiz-head-right{display:flex;gap:18px;align-items:center}.quiz-timer{font-variant-numeric:tabular-nums;color:#b6c3d4;font-size:13px}.quiz-counter{color:#f5fbff;font-size:13px;font-weight:680}.progress-track{height:6px;background:#263347;border-radius:50px;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#60e1bb,#a1a5ff);transition:width .3s ease;border-radius:50px}.quiz-layout{display:grid;grid-template-columns:minmax(0,1fr) 255px;gap:22px;margin-top:30px;align-items:start}.question-card{padding:39px 43px 30px;min-height:580px}.question-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.question-category{display:inline-flex;align-items:center;background:#183a39;color:var(--teal);padding:7px 11px;border:1px solid #386b65;border-radius:8px;font-size:10px;font-weight:780;letter-spacing:.11em}.question-type{font-size:12px;color:#9daec1}.question-source{font-size:11px;color:#7f95aa;margin:29px 0 9px}.question-title{font-size:clamp(23px,2.4vw,31px);letter-spacing:-.035em;line-height:1.4;margin:0 0 29px;max-width:780px}.answers{display:grid;gap:11px}.answer-option{display:flex;align-items:center;gap:14px;width:100%;padding:15px 17px;min-height:67px;text-align:left;color:#ebf2fa;background:#111f31;border:1px solid #38475d;border-radius:12px;font-size:15px;font-weight:560;transition:background .15s,border-color .15s}.answer-option:not(:disabled):hover{border-color:#7ccbbf;background:#173447}.option-letter{width:31px;height:31px;min-width:31px;border-radius:8px;display:grid;place-items:center;background:#263950;color:#b9c7d8;font-size:13px;font-weight:770}.answer-option.correct{border-color:#60dfb6;background:var(--green-bg);color:#caffef}.answer-option.correct .option-letter{color:#073428;background:var(--teal)}.answer-option.wrong{border-color:#f38a8a;background:var(--red-bg);color:#ffd0cf}.answer-option.wrong .option-letter{color:#331c25;background:var(--red)}.answer-option.locked{cursor:default;opacity:1}.answer-option.locked:not(.correct):not(.wrong){opacity:.51}.hint-block{margin-top:22px}.hint-trigger{display:flex;align-items:center;gap:10px;border:0;background:transparent;color:var(--purple);font-weight:700;font-size:13px;padding:8px 0}.hint-arrow{margin-left:4px;font-size:19px}.hint-text{border:1px dashed #7e80c080;border-radius:10px;padding:12px 15px;background:#38355b38;color:#cfc9ff;font-size:13px;line-height:1.7;margin-top:5px}.feedback{border:1px solid #355d58;background:#10342e80;padding:19px;border-radius:14px;margin-top:25px}.feedback.is-wrong{border-color:#815057;background:#492c3640}.feedback-heading{display:flex;align-items:center;gap:9px;font-size:16px;margin-bottom:9px}.feedback-icon{border-radius:50%;color:#0c352c;background:var(--teal);width:24px;height:24px;display:grid;place-items:center;font-size:14px;font-weight:900}.feedback.is-wrong .feedback-icon{background:var(--red);color:#422229}.feedback p{color:#c1d4d1;font-size:14px;margin:9px 0;line-height:1.8}.feedback.is-wrong p{color:#e3c9cd}.correct-answer{margin:17px 0;padding:13px;border-radius:10px;background:#0b2c2b80;border:1px solid #326b60;display:flex;flex-direction:column;gap:4px}.correct-answer span{font-size:10px;font-weight:780;letter-spacing:.12em;color:var(--teal)}.correct-answer strong{font-size:14px;overflow-wrap:anywhere}.question-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #ffffff17;margin-top:30px;padding-top:23px}.question-footer>span{font-size:12px;color:#8499ae}.next-btn{min-width:175px}.quiz-aside{position:sticky;top:20px}.aside-card{padding:24px;background:#132337;border:1px solid var(--border);border-radius:18px}.progress-large{display:flex;align-items:baseline;margin-top:11px}.progress-large span{font-size:49px;font-weight:820;letter-spacing:-.06em}.progress-large small{font-size:16px;color:#7b94a6;margin-left:7px}.aside-metric{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#9eb0c2;margin-top:17px}.aside-metric strong{color:#e3ecf6;font-variant-numeric:tabular-nums}.aside-tip{padding:10px 15px;font-size:10px;font-weight:780;letter-spacing:.09em;color:var(--teal);line-height:2}.aside-tip span{font-size:12px;color:#91a6bc;letter-spacing:normal;font-weight:440}
+/* Resultados */.back-result{margin:34px 0}.results-hero{padding:34px 42px;display:flex;justify-content:space-between;gap:25px;align-items:center}.results-hero h1{font-size:clamp(30px,4vw,46px);line-height:1.15;margin:10px 0;letter-spacing:-.05em}.results-hero p{color:#a2b2c4;margin:0}.score-ring{width:152px;height:152px;flex:0 0 152px;border-radius:50%;background:conic-gradient(var(--teal) 0%,#26354b 0);display:grid;place-items:center}.score-ring>div{width:127px;height:127px;background:#14243a;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}.score-ring strong{font-size:32px;letter-spacing:-.045em}.score-ring span{font-size:11px;color:#9faec0}.result-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:18px 0}.result-metric{border:1px solid var(--border);background:#152439;padding:19px 21px;border-radius:15px;display:grid;gap:4px}.result-metric span{font-size:12px;color:#a6b5c8}.result-metric strong{font-size:28px;letter-spacing:-.04em}.results-actions{display:flex;flex-wrap:wrap;gap:13px;margin:25px 0 30px}.review-panel{padding:29px}.unit-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:25px}.summary-box{background:#0d1b2b;border:1px solid #2c4055;border-radius:12px;padding:14px}.summary-box span{font-size:11px;color:#9bb0c4}.summary-box strong{font-size:19px;display:block;margin-top:4px}.summary-bar{height:5px;background:#2b3a51;border-radius:20px;margin-top:9px;overflow:hidden}.summary-bar>span{display:block;height:100%;background:var(--teal);border-radius:20px}.mistakes-list{margin-top:18px}.mistakes-title{font-size:15px;margin:27px 0 12px}.mistake-item{padding:17px 2px;border-top:1px solid #ffffff18}.mistake-meta{font-size:10px;letter-spacing:.09em;color:var(--teal);font-weight:780}.mistake-item h4{font-size:15px;margin:8px 0;line-height:1.5}.mistake-item p{font-size:13px;color:#afc1d0;margin:6px 0;line-height:1.7}.wrong-answer-label{color:#ffaaaa}.right-answer-label{color:#92f7d4}.no-mistakes{font-size:14px;color:#b5cbbd;margin-top:20px}
+@media (max-width:1000px){.start-grid{grid-template-columns:1fr}.right-column{grid-template-columns:1fr 1fr}.insight-card{padding:25px}.insight-card h2{font-size:23px}.last-session{align-content:start}.quiz-layout{grid-template-columns:minmax(0,1fr) 200px}.question-card{padding:30px}.unit-summary{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:700px){.shell{padding:0 17px}.topbar{height:71px}.brand{font-size:19px}.brand-sub,.header-tag{display:none}.hero{padding:43px 0 32px}.hero h1{font-size:clamp(35px,9.1vw,54px);margin:17px 0 14px}.hero-copy{font-size:14px;line-height:1.8}.hero-stats{gap:13px;margin-top:24px}.stat{padding-right:15px}.stat strong{font-size:23px}.stat span{font-size:10px}.setup-panel{padding:22px}.panel-heading h2{font-size:21px}.right-column{grid-template-columns:1fr}.insight-card{padding:25px}.insight-icon{margin-bottom:17px}.insight-card h2{font-size:24px}.field-group{margin-top:23px}.field-head span{font-size:10px}.segment{font-size:11px;padding:8px 5px}.count-option{min-width:52px;padding:10px}.quiz-head{margin:23px 0 15px}.quiz-head-right{gap:10px}.quiz-counter,.quiz-timer{font-size:11px}.quiz-layout{grid-template-columns:1fr;margin-top:19px}.quiz-aside{display:none}.question-card{padding:22px 18px;min-height:0}.question-title{font-size:23px;margin-bottom:24px}.question-source{margin-top:24px}.answer-option{font-size:14px;padding:14px 11px;min-height:60px}.question-footer{flex-direction:column;align-items:stretch}.question-footer>span{font-size:11px}.next-btn{width:100%}.feedback{padding:15px}.results-hero{padding:25px 20px;flex-direction:column;align-items:flex-start}.score-ring{align-self:center}.result-metrics{grid-template-columns:repeat(2,1fr);gap:9px}.result-metric{padding:14px}.result-metric strong{font-size:23px}.results-actions>.primary-btn,.results-actions>.secondary-btn{width:100%}.review-panel{padding:18px}.unit-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.site-footer{margin-top:35px;line-height:1.7}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+  </style>
+
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Practicar, ir al inicio">
+        <span class="brand-symbol" aria-hidden="true">P<span class="brand-dot">.</span></span>
+        <span>practicar<span class="brand-sub"> / estudio inteligente</span></span>
+      </a>
+      <span class="header-tag"><span class="online-dot"></span> 100 % sin conexión</span>
+    </header>
+
+    <main>
+      <section id="start-screen" class="screen">
+        <div class="hero">
+          <div class="eyebrow"><span class="eyebrow-line"></span> REDES Y COMUNICACIONES · RC34</div>
+          <h1>Estudia mejor.<br><span class="gradient-text">Responde con confianza.</span></h1>
+          <p class="hero-copy">Pon a prueba tus conocimientos de las unidades I a IV. Cada respuesta incluye una explicación para entender lo que sabes y aprender de tus errores.</p>
+          <div class="hero-stats">
+            <div class="stat"><strong id="question-count">100</strong><span>preguntas</span></div>
+            <div class="stat"><strong>04</strong><span>unidades</span></div>
+            <div class="stat"><strong>02</strong><span>tipos de prueba</span></div>
+          </div>
+        </div>
+        <div class="start-grid">
+          <section class="panel setup-panel" aria-labelledby="setup-title">
+            <div class="panel-heading"><div><span class="section-kicker">TU SESIÓN</span><h2 id="setup-title">Configura tu práctica</h2></div><span class="step-label">01 / 02</span></div>
+            <div class="field-group">
+              <div class="field-head"><h3>Unidades a estudiar</h3><span>Elige una o varias</span></div>
+              <div class="unit-list" id="unit-options">
+                <label class="unit-option"><input type="checkbox" name="unit" value="1" checked><span class="unit-check" aria-hidden="true">✓</span><span class="unit-number">01</span><span class="unit-name">Teleprocesamiento</span></label>
+                <label class="unit-option"><input type="checkbox" name="unit" value="2" checked><span class="unit-check" aria-hidden="true">✓</span><span class="unit-number">02</span><span class="unit-name">Protocolos</span></label>
+                <label class="unit-option"><input type="checkbox" name="unit" value="3" checked><span class="unit-check" aria-hidden="true">✓</span><span class="unit-number">03</span><span class="unit-name">Redes de computadoras</span></label>
+                <label class="unit-option"><input type="checkbox" name="unit" value="4" checked><span class="unit-check" aria-hidden="true">✓</span><span class="unit-number">04</span><span class="unit-name">Modelo OSI</span></label>
+              </div>
+            </div>
+            <div class="field-group"><div class="field-head"><h3>Tipo de preguntas</h3></div>
+              <div class="segmented" id="type-options" role="group" aria-label="Tipo de preguntas">
+                <button type="button" class="segment selected" data-type="mixed" aria-pressed="true">Mixto</button>
+                <button type="button" class="segment" data-type="vf" aria-pressed="false">Verdadero / falso</button>
+                <button type="button" class="segment" data-type="mc" aria-pressed="false">Triple elección</button>
+              </div>
+            </div>
+            <div class="field-group"><div class="field-head"><h3>Cantidad de preguntas</h3><span id="available-note">100 disponibles</span></div>
+              <div class="count-options" id="count-options" role="group" aria-label="Número de preguntas">
+                <button type="button" class="count-option" data-count="10" aria-pressed="false">10</button>
+                <button type="button" class="count-option selected" data-count="20" aria-pressed="true">20</button>
+                <button type="button" class="count-option" data-count="30" aria-pressed="false">30</button>
+                <button type="button" class="count-option" data-count="50" aria-pressed="false">50</button>
+                <button type="button" class="count-option" data-count="all" aria-pressed="false">Todas</button>
+              </div>
+            </div>
+            <p id="config-error" class="form-error" role="alert" hidden></p>
+            <button id="start-btn" class="primary-btn" type="button"><span>Comenzar examen</span><span aria-hidden="true">↗</span></button>
+            <p class="small-note">Sin registros ni cuentas. Las estadísticas se guardan únicamente en este navegador.</p>
+          </section>
+          <aside class="right-column">
+            <div class="insight-card"><div class="insight-icon" aria-hidden="true">✦</div><span class="section-kicker">ASÍ FUNCIONA</span><h2>Entiende cada respuesta, no solo memorices.</h2><div class="mini-divider"></div>
+              <div class="feature"><span class="feature-number">01</span><div><strong>Pista opcional</strong><p>Recibe una orientación antes de contestar.</p></div></div>
+              <div class="feature"><span class="feature-number">02</span><div><strong>Explicación inmediata</strong><p>Descubre por qué tu opción es correcta o incorrecta.</p></div></div>
+              <div class="feature"><span class="feature-number">03</span><div><strong>Repasa tus errores</strong><p>Vuelve a practicar lo que más te cuesta.</p></div></div>
+            </div>
+            <div class="last-session panel"><div><span class="section-kicker">TU PROGRESO</span><h3 id="history-title">Aún no hay resultados</h3><p id="history-copy">Completa un examen para ver tu rendimiento.</p></div><button id="review-last-btn" class="secondary-btn" type="button" disabled>Repasar errores <span aria-hidden="true">↗</span></button></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="quiz-screen" class="screen" hidden aria-label="Examen en curso">
+        <div class="quiz-head"><button type="button" class="quiet-button" id="exit-btn">← Salir de la práctica</button><div class="quiz-head-right"><span class="quiz-timer" id="timer" aria-label="Tiempo transcurrido">00:00</span><span class="quiz-counter" id="progress-label">Pregunta 1 / 20</span></div></div>
+        <div class="progress-track" role="progressbar" aria-label="Progreso del examen" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+        <div class="quiz-layout">
+          <article class="question-card panel"><div class="question-top"><span class="question-category" id="question-category">UNIDAD I</span><span class="question-type" id="question-type">Verdadero o falso</span></div>
+            <p class="question-source" id="question-source"></p>
+            <h1 class="question-title" id="question-title"></h1>
+            <div class="answers" id="answers" role="group" aria-label="Opciones de respuesta"></div>
+            <div class="hint-block" id="hint-block"><button type="button" id="hint-btn" class="hint-trigger" aria-expanded="false">✧ <span>Necesito una pista</span><span class="hint-arrow">⌄</span></button><div id="hint-text" class="hint-text" hidden></div></div>
+            <div id="feedback" class="feedback" role="status" aria-live="polite" hidden><div class="feedback-heading"><span id="feedback-icon" class="feedback-icon"></span><strong id="feedback-title"></strong></div><p id="feedback-reason"></p><div class="correct-answer"><span>RESPUESTA CORRECTA</span><strong id="feedback-correct"></strong></div><p id="feedback-explanation"></p></div>
+            <div class="question-footer"><span id="question-footer-note">Selecciona una respuesta para continuar.</span><button type="button" id="next-btn" class="primary-btn next-btn" disabled>Continuar <span aria-hidden="true">→</span></button></div>
+          </article>
+          <aside class="quiz-aside"><div class="aside-card"><span class="section-kicker">AVANCE</span><div class="progress-large"><span id="progress-fraction">01</span><small id="progress-total">/ 20</small></div><div class="mini-divider"></div><div class="aside-metric"><span>Correctas</span><strong id="score-correct">0</strong></div><div class="aside-metric"><span>Incorrectas</span><strong id="score-wrong">0</strong></div><div class="aside-metric"><span>Pistas usadas</span><strong id="hints-used">0</strong></div></div><p class="aside-tip">CONSEJO<br><span>Intenta responder sin la pista primero. La explicación aparece después de contestar.</span></p></aside>
+        </div>
+      </section>
+
+      <section id="result-screen" class="screen" hidden aria-label="Resultados del examen">
+        <button type="button" class="quiet-button back-result" id="home-btn">← Volver al inicio</button>
+        <div class="results-hero panel"><div><span class="section-kicker">PRÁCTICA COMPLETADA</span><h1 id="results-title">¡Buen trabajo!</h1><p id="results-subtitle">Revisa tus resultados y continúa mejorando.</p></div><div class="score-ring" id="score-ring"><div><strong id="final-percent">0%</strong><span>aciertos</span></div></div></div>
+        <div class="result-metrics"><div class="result-metric"><span>Correctas</span><strong id="final-correct">0</strong></div><div class="result-metric"><span>Incorrectas</span><strong id="final-wrong">0</strong></div><div class="result-metric"><span>Tiempo</span><strong id="final-time">00:00</strong></div><div class="result-metric"><span>Pistas utilizadas</span><strong id="final-hints">0</strong></div></div>
+        <div class="results-actions"><button type="button" class="primary-btn" id="retry-wrong-btn">Repasar mis errores <span aria-hidden="true">→</span></button><button type="button" class="secondary-btn" id="new-exam-btn">Preparar otro examen</button></div>
+        <section class="panel review-panel"><div class="panel-heading"><div><span class="section-kicker">ANÁLISIS</span><h2>Lo que necesitas reforzar</h2></div><span id="review-count" class="step-label"></span></div><div id="unit-summary" class="unit-summary"></div><div id="mistakes-list" class="mistakes-list"></div></section>
+      </section>
+    </main>
+    <footer class="site-footer"><span>practicar <span class="footer-accent">✳</span> hecho para aprender</span><span>*Funciona sin conexión después de guardar los archivos. Basado en la guía RC34 (unidades I–IV).</span></footer>
+  </div>
+<script>
+/* Banco elaborado a partir de "Cuestionario Primer Parcial Unidades I a IV" (RC34).
+   Cada número de referencia corresponde a una de las 50 preguntas del documento. */
+(function () {
+  'use strict';
+  const v = (u,n,q,answer,hint,explanation,topic,suffix="") => ({id:`vf-${n}${suffix}`,unit:u,ref:n,type:'vf',question:q,options:['Verdadero','Falso'],answer:answer?0:1,hint,explanation,topic});
+  const m = (u,n,q,options,answer,hint,explanation,reasons,topic,suffix="") => ({id:`mc-${n}${suffix}`,unit:u,ref:n,type:'mc',question:q,options,answer,hint,explanation,reasons,topic});
+  const bank = [
+    // UNIDAD I · TELEPROCESAMIENTO (1–12)
+    v(1,1,'El teleprocesamiento permite procesar información a distancia, aunque el usuario y la computadora estén en lugares diferentes.',true,'Piensa en consultar tu saldo desde un celular.','Es verdadero: el teleprocesamiento une informática y telecomunicaciones para que los datos se procesen a distancia.','Teleprocesamiento'),
+    m(1,1,'¿Cuál es un ejemplo de teleprocesamiento?',['Consultar el saldo bancario desde un celular','Calcular a mano en un cuaderno','Pintar un dibujo sin usar tecnología'],0,'Busca una actividad donde los datos viajen hacia otro sistema.','Consultar el saldo implica enviar una solicitud por una red a un sistema que procesa los datos a distancia.',['','El cálculo manual no implica procesamiento informático a distancia.','Dibujar sin tecnología tampoco supone intercambio remoto de datos.'],'Teleprocesamiento'),
+    v(1,2,'En un sistema de teleprocesamiento, el procesador frontal se encarga de ejecutar todas las aplicaciones del host.',false,'Distingue quién maneja las líneas y quién procesa los datos.','Es falso: el procesador frontal administra las líneas y descarga trabajo de comunicaciones; la computadora central (host) ejecuta las aplicaciones y procesa los datos.','Componentes'),
+    m(1,2,'¿Qué componente adapta la señal del terminal a la línea de comunicación?',['Computadora central (host)','Módem (ETCD)','Procesador frontal'],1,'La sigla ETCD se refiere al equipo de comunicación de datos.','El módem o ETCD adapta la señal del equipo terminal a las características del canal.',['El host procesa los datos y ejecuta aplicaciones, no adapta por sí solo la señal a la línea.','','El procesador frontal administra líneas para aliviar al host, pero no es el componente de adaptación indicado.'],'Componentes'),
+    v(1,3,'El procesamiento por lotes exige una respuesta inmediata a cada operación individual.',false,'Recuerda cómo se procesan las facturas del mes.','Es falso: en el procesamiento por lotes los datos se acumulan y se procesan juntos; la respuesta no es inmediata.','Tipos de procesamiento'),
+    m(1,3,'Autorizar un pago con tarjeta dentro de un plazo estricto se considera un procesamiento…',['Por lotes','Interactivo sin plazo estricto','De tiempo real'],2,'La característica clave es tener un límite de respuesta muy corto.','Es tiempo real porque la respuesta debe llegar dentro de un plazo corto y definido.',['Por lotes acumula datos sin responder cada operación al instante.','El interactivo responde al usuario, pero no necesariamente tiene una exigencia temporal tan estricta.',''],'Tipos de procesamiento'),
+    v(1,4,'Una señal analógica es continua; una señal digital utiliza valores discretos.',true,'La voz en radio y los bits son buenos ejemplos.','Es verdadero: la señal analógica puede tomar infinitos valores, mientras la digital toma valores discretos, habitualmente 0 y 1.','Señales'),
+    m(1,4,'¿Cuál de los siguientes es un ejemplo de señal digital?',['Voz analógica transmitida por radio FM','Bits 0 y 1 transmitidos por un cable de red','Una onda continua sin cuantizar'],1,'La señal digital maneja estados discretos.','Los bits 0 y 1 son valores discretos y representan una señal digital.',['La voz o radio FM del ejemplo se clasifica como señal analógica.','','Una onda continua es una señal analógica, no digital.'],'Señales'),
+    v(1,5,'La frecuencia de una señal se mide en hercios (Hz) y representa la cantidad de ciclos por segundo.',true,'No confundas frecuencia con amplitud.','Es verdadero: frecuencia es el número de ciclos en un segundo y su unidad es el hercio (Hz).','Propiedades de la señal'),
+    m(1,5,'¿Qué se entiende por ancho de banda de un canal según la guía?',['La altura o fuerza de la señal','El rango de frecuencias que deja pasar','La cantidad de cables conectados'],1,'El canal telefónico citado admite aproximadamente de 300 a 3400 Hz.','El ancho de banda es la gama de frecuencias que un canal puede transmitir.',['Eso define la amplitud.','','El número de cables no define el ancho de banda en este contexto.'],'Propiedades de la señal'),
+    v(1,6,'La atenuación significa que la señal pierde intensidad a medida que aumenta la distancia.',true,'Imagina una señal que se debilita durante el viaje.','Es verdadero: la pérdida de fuerza de la señal con la distancia se llama atenuación.','Problemas de transmisión'),
+    m(1,6,'Si una interferencia se suma a la señal útil de una comunicación, el problema se llama…',['Ruido','Distorsión','Atenuación'],0,'Una radio puede presentar este fenómeno.','El ruido consiste en señales no deseadas que se agregan a la señal original.',['','La distorsión deforma la señal; no es lo mismo que añadir interferencias externas.','La atenuación reduce la amplitud o fuerza de la señal.'],'Problemas de transmisión'),
+    v(1,7,'Una señal que transmite 2 bits por símbolo a 1200 baudios alcanza 2400 bits por segundo.',true,'Fórmula: bps = baudios × bits por símbolo.','Es verdadero: 1200 × 2 = 2400 bps. Los baudios cuentan cambios de señal y los bps cuentan bits.','Baudios y bps'),
+    m(1,7,'Una transmisión de 1000 baudios transporta 3 bits por símbolo. ¿Cuál es su velocidad?',['3000 bps','1000 bps','333 bps'],0,'Multiplica los símbolos por segundo por los bits que lleva cada símbolo.','1000 baudios × 3 bits por símbolo = 3000 bits por segundo.',['','1000 bps sería correcto si cada símbolo transportara solamente 1 bit.','Dividir entre 3 es lo contrario de la operación requerida.'],'Baudios y bps'),
+    v(1,8,'ASCII tradicional utiliza 7 bits y permite representar 128 caracteres.',true,'Piensa en 2 elevado a 7.','Es verdadero: 2⁷ = 128 combinaciones; la guía presenta ASCII con 7 bits.','Codificación'),
+    m(1,8,'¿Qué código de caracteres utiliza 5 bits según la guía?',['EBCDIC','Baudot','ASCII'],1,'Es el de menor cantidad de bits entre los tres códigos clásicos.','Baudot utiliza 5 bits, según el material de estudio.',['EBCDIC emplea 8 bits.','','ASCII tradicional emplea 7 bits.'],'Codificación'),
+    v(1,9,'Una transmisión asíncrona con 1 bit de inicio, 8 de datos y 1 de parada tiene 100 % de eficiencia.',false,'Cuenta todos los bits transmitidos por carácter.','Es falso: se transmiten 10 bits en total, pero solo 8 transportan datos. La eficiencia es 8/10 = 80 %.','Sincronización'),
+    m(1,9,'¿Por qué la transmisión síncrona suele ser más eficiente que la asíncrona?',['Porque no transporta datos','Porque coloca control una vez por bloque','Porque añade inicio y parada a cada carácter'],1,'Compara la frecuencia con que agrega información de control.','La transmisión síncrona agrupa los datos en bloques y añade la sincronización por bloque, reduciendo la sobrecarga relativa.',['Sin datos no habría transmisión útil.','','Los bits de inicio y parada por carácter caracterizan a la asíncrona.'],'Sincronización'),
+    v(1,10,'En modo semidúplex, ambos dispositivos pueden enviar información al mismo tiempo.',false,'Piensa en un walkie-talkie.','Es falso: semidúplex permite ambos sentidos, pero no simultáneamente. El dúplex completo sí permite transmitir y recibir a la vez.','Sentido de transmisión'),
+    m(1,10,'Una llamada telefónica en la que ambos hablan y escuchan simultáneamente usa…',['Simplex','Semidúplex','Dúplex'],2,'¿Pueden circular datos en los dos sentidos a la vez?','Dúplex completo permite comunicación simultánea en ambos sentidos.',['Simplex permite solo un sentido.','Semidúplex permite ambos sentidos, pero se turnan.',''],'Sentido de transmisión'),
+    v(1,11,'FSK modifica la fase de una señal para representar datos.',false,'ASK = amplitud; FSK = frecuencia; PSK = fase.','Es falso: FSK varía la frecuencia. La modulación que varía la fase es PSK.','Modulación'),
+    m(1,11,'¿Qué tipo de modulación combina variaciones de amplitud y fase?',['QAM','ASK','FSK'],0,'No cambia solamente una de las propiedades.','QAM combina cambios de amplitud y fase para representar símbolos.',['','ASK modifica la amplitud, no la fase conjuntamente.','FSK modifica la frecuencia.'],'Modulación'),
+    v(1,12,'En paridad par, si una secuencia ya contiene dos bits 1, se agrega un bit de paridad 0.',true,'El total de unos debe quedar par.','Es verdadero: si ya hay una cantidad par de unos, el bit de paridad debe ser 0 para conservarla.','Detección de errores'),
+    m(1,12,'¿Cuál es un método de corrección de errores, y no solo de detección?',['CRC','Checksum','ARQ (retransmisión)'],2,'Distingue comprobar que hubo error de volver a obtener los datos bien.','ARQ corrige mediante retransmisión cuando detecta una transmisión errónea; FEC también es un método de corrección.',['CRC permite detectar errores mediante un valor de comprobación.','Checksum ayuda a detectar modificaciones, no a corregirlas por sí solo.',''],'Detección de errores'),
+    // UNIDAD II · PROTOCOLOS (13–27)
+    v(2,13,'La sintaxis, la semántica y la temporización son los tres elementos esenciales de un protocolo de comunicación.',true,'Formato, significado y momento del intercambio.','Es verdadero: sintaxis describe el formato; semántica, el significado; y temporización, cuándo y a qué ritmo se intercambian mensajes.','Protocolos'),
+    m(2,13,'¿Qué elemento de un protocolo indica cuándo y a qué velocidad se transmite?',['Sintaxis','Temporización','Semántica'],1,'Piensa en el tiempo, no en el contenido.','La temporización regula el momento y el ritmo del intercambio.',['La sintaxis define el formato del mensaje.','','La semántica explica el significado de los campos y señales de control.'],'Protocolos'),
+    v(2,14,'El control de flujo forma parte de las funciones de control del enlace de datos.',true,'El receptor no siempre puede procesar datos tan rápido como el emisor.','Es verdadero: el control de enlace contempla sincronización de trama, flujo, errores, direccionamiento y gestión del enlace.','Control de enlace'),
+    m(2,14,'¿Cuál de las siguientes pertenece al control del enlace de datos?',['Control de flujo','Diseño del teclado','Renderizado de imágenes'],0,'Busca un mecanismo que regule el intercambio entre dispositivos.','El control de flujo evita que el emisor sobrepase la capacidad de recepción.',['','El diseño del teclado es una cuestión de interfaz de usuario.','Dibujar imágenes en pantalla no constituye una función de control de enlace.'],'Control de enlace'),
+    v(2,15,'HDLC es orientado a carácter y depende de códigos ASCII o EBCDIC para delimitar sus tramas.',false,'BSC y HDLC no organizan las tramas del mismo modo.','Es falso: HDLC está orientado a bits y emplea una secuencia especial de bits; BSC es el orientado a caracteres.','Protocolos de enlace'),
+    m(2,15,'¿Cuál es un protocolo orientado a caracteres?',['HDLC','SDLC','BSC'],2,'Se basa en caracteres de control como SYN, STX y ETX.','BSC usa caracteres de control y depende de una codificación como ASCII o EBCDIC.',['HDLC está orientado a bits.','SDLC está orientado a bits.',''],'Protocolos de enlace'),
+    v(2,16,'En parada y espera, el emisor manda una nueva trama sin esperar ninguna confirmación.',false,'Su nombre describe lo que hace después de transmitir.','Es falso: el emisor envía una trama y espera el acuse antes de mandar otra; la ventana deslizante permite varias tramas sin confirmar.','Control de flujo'),
+    m(2,16,'¿Qué técnica permite tener varias tramas pendientes de confirmación?',['Parada y espera','Ventana deslizante','Comunicación simplex'],1,'Las tramas se numeran dentro de una ventana.','La ventana deslizante permite enviar varias tramas antes de recibir todos sus acuses.',['Parada y espera mantiene solo una trama pendiente.','','Simplex indica la dirección de transmisión, no el método de confirmaciones.'],'Control de flujo'),
+    v(2,17,'BSC es un protocolo síncrono, orientado a carácter y semidúplex.',true,'Fue desarrollado por IBM.','Es verdadero: BSC (Bisync) es de IBM, orientado a carácter, síncrono, semidúplex y usa parada y espera.','BSC'),
+    m(2,17,'¿Qué empresa desarrolló el protocolo BSC?',['Microsoft','IBM','Cisco'],1,'También desarrolló SDLC.','BSC es un protocolo de IBM, presentado en la guía con fecha de 1967.',['Microsoft no es la empresa que la guía asocia con BSC.','','Cisco no es la empresa que la guía asocia con BSC.'],'BSC'),
+    v(2,18,'En el diálogo BSC, NAK informa que el bloque llegó con error y debe retransmitirse.',true,'ACK acepta; NAK rechaza.','Es verdadero: ante un error detectado por BCC, el receptor envía NAK y el emisor repite el bloque.','Diálogo BSC'),
+    m(2,18,'¿Qué señal utiliza BSC para terminar el intercambio?',['EOT','ENQ','ACK1'],0,'Piensa en «End of Transmission».','EOT indica el fin de la transmisión en el diálogo BSC.',['','ENQ solicita la línea o inicia una consulta.','ACK1 es un acuse de recibo, no el cierre de la comunicación.'],'Diálogo BSC'),
+    v(2,19,'En el modo transparente de BSC, si aparece el carácter DLE dentro de los datos, se envía duplicado.',true,'Recuerda la secuencia DLE DLE.','Es verdadero: se duplica DLE en los datos para que no sea confundido con una instrucción de control.','BSC transparente'),
+    m(2,19,'¿Qué combinación marca el inicio de un bloque transparente de BSC?',['DLE ETX','DLE STX','EOT ACK'],1,'STX señala comienzo del texto y ETX su final.','DLE STX abre el bloque transparente, que se cierra con DLE ETX.',['DLE ETX señala el fin del bloque.','','EOT y ACK son señales de control, pero no delimitan así el bloque transparente.'],'BSC transparente'),
+    v(2,20,'La bandera delimitadora de una trama HDLC utiliza la secuencia 01111110.',true,'La misma bandera aparece al inicio y al final.','Es verdadero: 01111110 delimita el inicio y el final de las tramas HDLC.','Trama HDLC'),
+    m(2,20,'¿En qué orden aparecen los campos principales de una trama HDLC?',['Bandera–Dirección–Control–Información–FCS–Bandera','Dirección–Información–Bandera–Control–FCS','FCS–Bandera–Información–Dirección'],0,'La trama está encerrada entre dos banderas.','La estructura indicada es Bandera, Dirección, Control, Información, FCS y Bandera.',['','La bandera no debe colocarse en medio de la estructura de esa manera.','El FCS no abre una trama HDLC.'],'Trama HDLC'),
+    v(2,21,'El bit stuffing de HDLC inserta un 0 cada vez que aparecen cinco bits 1 consecutivos en los datos.',true,'Su objetivo es evitar falsos delimitadores de trama.','Es verdadero: el emisor inserta un 0 tras cinco unos consecutivos y el receptor lo quita.','Relleno de bits'),
+    m(2,21,'Al aplicar bit stuffing a los datos 11111111, ¿qué secuencia se transmite?',['11111111','111110111','1111100111'],1,'Después del quinto 1 se inserta un único 0.','11111111 contiene ocho unos seguidos: tras el quinto se agrega 0 y quedan tres unos, formando 111110111.',['No incluye el 0 requerido para evitar confusión con la bandera.','','Inserta más ceros de los necesarios en esta secuencia.'],'Relleno de bits'),
+    v(2,22,'En HDLC, las tramas S se usan principalmente para transportar datos de usuario.',false,'¿Qué letra representa información?','Es falso: las tramas I transportan información; las S supervisan flujo y errores; las U gestionan el enlace.','Tramas HDLC'),
+    m(2,22,'¿Cuál de estos tipos de trama HDLC controla flujo y errores?',['I (información)','S (supervisión)','U (no numerada)'],1,'RR, RNR, REJ y SREJ pertenecen a este tipo.','Las tramas S son de supervisión y gestionan control de flujo y errores.',['Las I se utilizan para datos de usuario.','','Las U se emplean para la gestión del enlace, como establecerlo o terminarlo.'],'Tramas HDLC'),
+    v(2,23,'En el modo ABM de HDLC, dos estaciones combinadas tienen igual capacidad para iniciar transmisiones.',true,'ABM no depende de permisos de una primaria.','Es verdadero: ABM es un modo balanceado en el que cualquiera de las dos estaciones puede transmitir.','Modos HDLC'),
+    m(2,23,'¿En qué modo HDLC la secundaria transmite únicamente cuando la primaria la sondea?',['ABM','ARM','NRM'],2,'En la guía, este es el modo de respuesta «normal».','NRM requiere que la estación primaria autorice o sondee a la secundaria.',['ABM da autonomía a dos estaciones combinadas.','ARM permite que la secundaria transmita sin pedir permiso.',''],'Modos HDLC'),
+    v(2,24,'SDLC fue desarrollado por IBM y funciona en modo NRM con una estación primaria.',true,'No lo confundas con los modos adicionales de HDLC.','Es verdadero: SDLC es el protocolo orientado a bits de IBM para SNA y funciona con una primaria en NRM.','SDLC'),
+    m(2,24,'SDLC se desarrolló para la arquitectura de redes…',['SNA de IBM','HTTP de la Web','Bluetooth PAN'],0,'La arquitectura pertenece al mismo fabricante del protocolo.','SDLC corresponde a la arquitectura SNA de IBM.',['','HTTP es un protocolo de aplicación, no la arquitectura asociada a SDLC.','Bluetooth no es la arquitectura de la que forma parte SDLC.'],'SDLC'),
+    v(2,25,'Según la guía, SDLC ofrece los tres modos NRM, ARM y ABM, igual que HDLC.',false,'HDLC incorpora más modalidades que su antecedente.','Es falso: según el material, SDLC solo trabaja en NRM; HDLC añade ARM y ABM.','SDLC frente a HDLC'),
+    m(2,25,'¿Qué modo aparece en HDLC, pero no en SDLC según el cuestionario?',['NRM','ABM','Solo NRM y ninguno más'],1,'SDLC opera solo en NRM.','HDLC incorpora ABM y ARM además de NRM; SDLC se limita a NRM.',['NRM está presente en ambos protocolos.','','Esa descripción es justamente la limitación de SDLC, no una característica exclusiva de HDLC.'],'SDLC frente a HDLC'),
+    v(2,26,'X.25 utiliza tres niveles: físico, enlace y paquete.',true,'El nivel de enlace se apoya en LAPB.','Es verdadero: la guía divide X.25 en físico, enlace con LAPB y paquete con PLP.','X.25'),
+    m(2,26,'¿Qué protocolo se utiliza en el nivel de enlace de X.25?',['LAPB','SMTP','FTP'],0,'Es una variante de HDLC.','LAPB es el protocolo de enlace utilizado por X.25.',['','SMTP es un protocolo de correo electrónico de aplicación.','FTP se usa para transferir archivos; no es el nivel de enlace de X.25.'],'X.25'),
+    v(2,27,'Un circuito virtual permanente (PVC) se crea para cada llamada y se elimina al terminarla.',false,'La P de PVC significa «permanente».','Es falso: el PVC está configurado de forma permanente; el SVC se establece al iniciar una comunicación y se libera después.','Circuitos virtuales'),
+    m(2,27,'¿Cuál circuito virtual se establece y libera al realizar una comunicación?',['PVC','SVC','Ambos son siempre permanentes'],1,'Conmutado equivale a iniciar y finalizar como una llamada.','El SVC es el circuito virtual conmutado: se establece para la sesión y se libera cuando termina.',['El PVC está configurado de forma permanente.','','Solo PVC es permanente en esta clasificación.'],'Circuitos virtuales'),
+    // UNIDAD III · REDES (28–36)
+    v(3,28,'En una red de computadoras autónomas, cada equipo puede funcionar por sí mismo.',true,'Autonomía no significa ausencia de conexión.','Es verdadero: los equipos se interconectan para intercambiar datos sin dejar de ser computadoras capaces de operar independientemente.','Conceptos de redes'),
+    m(3,28,'¿Qué caracteriza a una red de computadoras?',['Computadoras interconectadas que comparten recursos','Equipos que nunca pueden intercambiar datos','Un único procesador con muchos monitores'],0,'Recuerda las palabras interconexión y protocolos comunes.','Una red permite intercambiar datos y compartir recursos entre equipos por medios y protocolos comunes.',['','La incapacidad de intercambiar datos contradice la finalidad de una red.','Varios monitores de un solo equipo no forman necesariamente una red de computadoras.'],'Conceptos de redes'),
+    v(3,29,'Una red PAN normalmente cubre una ciudad entera.',false,'Piensa en el Bluetooth de unos auriculares.','Es falso: PAN es una red personal de corto alcance; MAN cubre el ámbito de una ciudad.','Escalas de red'),
+    m(3,29,'Una red que conecta distintas sucursales de un banco en varios países es…',['PAN','LAN','WAN'],2,'Su cobertura supera un edificio o una ciudad.','WAN abarca grandes distancias como países o continentes.',['PAN cubre el entorno de una persona.','LAN suele cubrir una sala, edificio o campus.',''],'Escalas de red'),
+    v(3,30,'En una red entre pares (P2P), los equipos pueden solicitar y ofrecer servicios sin depender de un servidor único.',true,'No confundas P2P con un enlace punto a punto.','Es verdadero: entre pares los equipos pueden actuar como clientes y proveedores de servicios.','Arquitectura de red'),
+    m(3,30,'¿Cuál es un ejemplo de arquitectura cliente-servidor?',['Dos equipos que comparten archivos como pares','Un navegador que solicita una página a un servidor web','Un cable físico entre dos routers'],1,'Identifica quién solicita un servicio y quién lo ofrece.','El servidor web ofrece el recurso y el navegador cliente lo solicita.',['Eso es un ejemplo de red entre pares.','','Ese caso describe un enlace punto a punto, no necesariamente arquitectura cliente-servidor.'],'Arquitectura de red'),
+    v(3,31,'Un enlace multipunto comparte la capacidad de comunicación entre varios dispositivos.',true,'Se utiliza en Wi-Fi y en líneas compartidas.','Es verdadero: varios equipos comparten el medio y necesitan reglas de acceso para coordinarse.','Enlaces'),
+    m(3,31,'¿Qué ventaja tiene un enlace punto a punto?',['Toda la capacidad del enlace es para los dos dispositivos','No necesita ningún equipo en sus extremos','Siempre es más barato para cientos de nodos'],0,'Solo conecta dos extremos.','El enlace dedicado sirve a esos dos dispositivos y facilita aislar fallas.',['','Sigue requiriendo dispositivos capaces de comunicarse.','Puede encarecerse al multiplicar enlaces para muchos equipos.'],'Enlaces'),
+    v(3,32,'En una topología en estrella, si falla el nodo central, toda la red puede quedar incomunicada.',true,'Todos los equipos dependen de un punto común.','Es verdadero: la estrella facilita agregar equipos, pero el switch o hub central es un punto único de falla.','Topologías'),
+    m(3,32,'¿En qué topología todos los equipos se conectan a un dispositivo central?',['Anillo','Estrella','Bus'],1,'Ese punto central suele ser un switch.','En la topología en estrella, los dispositivos tienen enlaces independientes hacia un nodo central.',['En un anillo los equipos forman un circuito.','','En bus los equipos comparten un medio principal, no un nodo central.'],'Topologías'),
+    v(3,33,'La topología física describe por dónde se mueven lógicamente las señales, no cómo están conectados los equipos.',false,'«Física» tiene que ver con cables y colocación real.','Es falso: la física es la disposición real de equipos y cables; la lógica describe el recorrido de las señales.','Topología física y lógica'),
+    m(3,33,'¿Qué representa la topología lógica de una red?',['El color y grosor del cable','El recorrido que siguen los datos o señales','La ubicación real de los equipos en un plano'],1,'No se refiere necesariamente a la forma visible del cableado.','La topología lógica representa cómo fluyen las señales por la red.',['El color del cable no determina el recorrido lógico.','','Eso corresponde a la disposición física.'],'Topología física y lógica'),
+    v(3,34,'Una malla completa de seis equipos necesita 15 enlaces.',true,'Usa n(n − 1)/2.','Es verdadero: con n = 6, la fórmula da 6 × 5 / 2 = 15 enlaces.','Cálculo de enlaces'),
+    m(3,34,'¿Cuántos enlaces hacia el nodo central necesita una topología de estrella con seis equipos?',['15','6','30'],1,'Cada dispositivo tiene un enlace hacia el centro.','Se requieren 6 enlaces: uno por cada uno de los seis equipos.',['15 enlaces corresponde a una malla completa de seis equipos.','','30 no es el número requerido para esta topología de estrella.'],'Cálculo de enlaces'),
+    v(3,35,'En conmutación de circuitos, se reserva un camino exclusivo durante toda la comunicación.',true,'Piensa en la telefonía fija clásica.','Es verdadero: la conmutación de circuitos establece un camino dedicado, a diferencia de la de paquetes que comparte enlaces.','Conmutación'),
+    m(3,35,'¿Qué técnica usa Internet para enviar datos por enlaces compartidos?',['Conmutación de paquetes','Reserva permanente de circuito exclusivo','Únicamente comunicación simplex'],0,'Los datos se dividen en unidades pequeñas.','La conmutación de paquetes divide los datos y permite compartir los enlaces de la red.',['','Un circuito exclusivo se asocia a la conmutación de circuitos clásica.','Simplex describe la dirección de transmisión, no la técnica de conmutación.'],'Conmutación'),
+    v(3,36,'Los estándares de redes facilitan que dispositivos de distintos fabricantes puedan comunicarse.',true,'Piensa en la palabra «interoperabilidad».','Es verdadero: la normalización promueve la interoperabilidad, favorece la competencia y reduce costos.','Normalización'),
+    m(3,36,'¿Cuál de estos grupos contiene únicamente organismos de normalización citados en la guía?',['ISO, UIT-T, IEEE e IETF','HTTP, TCP, UDP y DNS','LAN, MAN, WAN y PAN'],0,'Identifica organizaciones, no protocolos o clases de red.','ISO, UIT-T, IEEE e IETF son organismos vinculados a los estándares.',['','HTTP, TCP, UDP y DNS son protocolos, no organismos.','LAN, MAN, WAN y PAN son categorías de red por escala.'],'Normalización'),
+    // UNIDAD IV · OSI (37–50)
+    v(4,37,'El modelo OSI contiene siete capas y la capa 1 es la física.',true,'Recorre la pila desde aplicación hasta física.','Es verdadero: las siete capas de 7 a 1 son aplicación, presentación, sesión, transporte, red, enlace de datos y física.','Modelo OSI'),
+    m(4,37,'¿Cuál es el orden correcto de las tres capas superiores del modelo OSI (7, 6 y 5)?',['Aplicación, Presentación, Sesión','Transporte, Red, Enlace','Sesión, Física, Aplicación'],0,'La capa 7 es la más próxima a las aplicaciones.','Las capas superiores son 7 Aplicación, 6 Presentación y 5 Sesión.',['','Transporte, Red y Enlace corresponden a las capas 4, 3 y 2.','El orden y los números de esas capas no coinciden con OSI.'],'Modelo OSI'),
+    v(4,38,'Al encapsular datos, la capa de enlace añade una cabecera y también una cola que puede contener el FCS.',true,'Distingue encabezado de tráiler.','Es verdadero: la encapsulación agrega información de control; la capa de enlace incluye el FCS en la cola.','Encapsulamiento'),
+    m(4,38,'¿Cómo se llama la unidad de datos de la capa 3 (red)?',['Segmento','Paquete','Trama'],1,'Capa 4 = segmento y capa 2 = trama.','En la guía, capa 3 utiliza paquetes; capa 4 segmentos; capa 2 tramas y capa 1 bits.',['El segmento corresponde a transporte (capa 4).','','La trama corresponde a enlace de datos (capa 2).'],'Encapsulamiento'),
+    v(4,39,'Las entidades pares son capas del mismo nivel, pero situadas en dispositivos distintos.',true,'Por ejemplo, la capa 3 de dos equipos.','Es verdadero: entidades pares son los componentes de la misma capa en equipos diferentes, que intercambian información siguiendo protocolos.','Servicios y protocolos'),
+    m(4,39,'¿Qué término nombra lo que una capa OSI ofrece a la capa inmediatamente superior?',['Servicio','Interfaz','Entidad par'],0,'No es la regla de comunicación con otro equipo.','Servicio es la función ofrecida a la capa superior.',['','Interfaz es el punto de comunicación entre capas vecinas de un mismo equipo.','Entidad par alude a la capa equivalente de otro dispositivo.'],'Servicios y protocolos'),
+    v(4,40,'La capa física se encarga de transmitir bits por medios como cobre, fibra óptica o aire.',true,'Su función no es interpretar mensajes de aplicación.','Es verdadero: la capa 1 transmite bits y define características físicas, eléctricas y mecánicas del enlace.','Capa física'),
+    m(4,40,'¿Cuál de los siguientes opera típicamente en la capa física (1)?',['Router','Hub','Switch'],1,'Este dispositivo repite la señal a sus puertos.','El hub funciona en la capa 1 y repite señales, sin decidir el puerto final según direcciones.',['El router opera en capa 3.','','El switch tradicional opera en capa 2.'],'Capa física'),
+    v(4,41,'Una dirección MAC de 48 bits equivale a 6 bytes.',true,'Un byte contiene ocho bits.','Es verdadero: 48 ÷ 8 = 6 bytes; la MAC se utiliza para el direccionamiento físico en la red local.','Capa de enlace'),
+    m(4,41,'¿Cuál es una función de la capa 2 (enlace de datos)?',['Control de acceso al medio','Ejecución del navegador web','Traducción de nombres DNS'],0,'Relaciona la capa con tramas y MAC.','La capa de enlace efectúa tramado, direccionamiento físico, control de errores, flujo y acceso al medio.',['','El navegador es una aplicación del usuario.','DNS es un servicio de la capa de aplicación, no el acceso físico al medio.'],'Capa de enlace'),
+    v(4,42,'En una trama Ethernet descrita en la guía, el campo FCS ocupa 4 bytes y sirve para detectar errores.',true,'FCS usa un CRC.','Es verdadero: la guía indica FCS de 4 bytes; permite identificar tramas dañadas.','Trama Ethernet'),
+    m(4,42,'¿Cuántos bytes ocupa una dirección MAC de origen en la trama Ethernet de la guía?',['2 bytes','6 bytes','16 bytes'],1,'Una dirección MAC clásica tiene 48 bits.','La dirección de origen ocupa 6 bytes, igual que la MAC de destino.',['2 bytes es el tamaño del campo Tipo indicado en la guía.','','16 bytes no corresponde al tamaño de una dirección MAC Ethernet.'],'Trama Ethernet'),
+    v(4,43,'Un router decide rutas utilizando direcciones IP y funciona en la capa 3.',true,'Un switch tradicional usa MAC, no IP, para reenviar tramas.','Es verdadero: un router conecta redes distintas y usa la tabla de enrutamiento con direcciones IP.','Equipos de red'),
+    m(4,43,'¿Qué dispositivo reenvía tramas según direcciones MAC y normalmente opera en capa 2?',['Hub','Switch','Router'],1,'El hub repite a todos; el router trabaja con IP.','Un switch de capa 2 selecciona el puerto de destino a partir de la dirección MAC.',['El hub repite señales a todos sus puertos.','','El router encamina paquetes entre redes según direcciones IP en capa 3.'],'Equipos de red'),
+    v(4,44,'Una dirección IPv4 tiene 48 bits y funciona en la capa 2 del modelo OSI.',false,'MAC e IPv4 tienen longitudes y funciones distintas.','Es falso: IPv4 usa 32 bits y funciona en la capa 3; la MAC clásica tiene 48 bits y se relaciona con la capa 2.','MAC frente a IP'),
+    m(4,44,'¿Qué dirección permite el direccionamiento lógico para llegar a diferentes redes?',['IP','MAC','FCS'],0,'Puede cambiar cuando un equipo se conecta a otra red.','La dirección IP pertenece a la capa 3 y permite identificar destinos en distintas redes.',['','La MAC se utiliza para el direccionamiento físico dentro de la red local.','FCS es un campo de detección de errores, no una dirección.'],'MAC frente a IP'),
+    v(4,45,'La dirección 192.168.1.10 pertenece a uno de los rangos privados indicados en la guía.',true,'El rango incluye 192.168.0.0/16.','Es verdadero: 192.168.1.10 está dentro de 192.168.0.0/16, uno de los tres bloques privados de IPv4.','Direcciones privadas'),
+    m(4,45,'¿Cuál de estos bloques pertenece a los rangos IPv4 privados RFC 1918?',['8.8.8.0/24','172.16.0.0/12','200.10.0.0/16'],1,'Los otros dos bloques son 10.0.0.0/8 y 192.168.0.0/16.','172.16.0.0/12 es uno de los tres rangos privados.',['8.8.8.0/24 no pertenece a los bloques privados RFC 1918.','','200.10.0.0/16 tampoco está entre los tres rangos privados.'],'Direcciones privadas'),
+    v(4,46,'TCP proporciona transmisión orientada a conexión, confirmaciones, retransmisión y entrega ordenada.',true,'Compáralo con UDP.','Es verdadero: TCP es confiable gracias a mecanismos como acuses, retransmisión y ordenamiento.','Transporte TCP/UDP'),
+    m(4,46,'¿Qué puerto se asocia habitualmente a HTTPS?',['80','53','443'],2,'HTTP suele utilizar 80 y DNS 53.','HTTPS utiliza habitualmente el puerto 443.',['80 corresponde normalmente a HTTP sin TLS.','53 corresponde habitualmente a DNS.',''],'Transporte TCP/UDP'),
+    v(4,47,'En el modelo OSI, la capa de presentación puede encargarse de codificación, compresión y cifrado.',true,'Piensa en formatos como Unicode, JPEG o MP3.','Es verdadero: la capa 6 se encarga de la representación y transformación de los datos.','Capas superiores'),
+    m(4,47,'¿Qué capa del modelo OSI se asocia con HTTP, SMTP, DNS y FTP?',['Aplicación (7)','Sesión (5)','Física (1)'],0,'Es la más cercana al software del usuario.','La capa de aplicación provee servicios de red a los programas.',['','La capa de sesión administra el diálogo entre aplicaciones.','La capa física transporta bits por medios físicos.'],'Capas superiores'),
+    v(4,48,'Al abrir una página web, la capa de red se ocupa de las direcciones IP y del encaminamiento de paquetes.',true,'Relaciona la capa 3 con routers.','Es verdadero: la capa de red incorpora las direcciones IP y los routers deciden cómo encaminar el tráfico.','Navegación web'),
+    m(4,48,'Al abrir una página web, ¿qué ocurre en la capa de enlace de datos?',['El navegador escribe la solicitud HTTP','Se arma la trama con MAC y FCS','Se comprime un archivo JPEG'],1,'Es la capa que prepara las tramas para la red local.','En enlace (capa 2) se crea la trama, se emplean direcciones MAC y se incorpora el FCS.',['La solicitud HTTP corresponde a aplicación.','','JPEG y la representación de datos se asocian a presentación.'],'Navegación web'),
+    // Refuerzos basados en las preguntas 46 y 48 del documento (sin inventar referencias 49 y 50).
+    v(4,46,'Una dirección IP y un número de puerto identifican, según la guía, un socket.',true,'Recuerda la pareja IP + puerto que aparece en la pregunta 46.','Es verdadero: el material resume que IP + puerto forman un socket.','Sockets','-extra'),
+    m(4,46,'¿Cuál es el rango posible de un número de puerto de 16 bits?',['0 a 255','0 a 65535','1 a 1024 únicamente'],1,'La cantidad de combinaciones es 2 elevado a 16.','Un campo de 16 bits permite 2¹⁶ = 65 536 valores, numerados de 0 a 65 535.',['0 a 255 representa solamente 256 valores, los de 8 bits.','','1 a 1024 deja fuera muchos puertos válidos.'],'Sockets','-extra'),
+    v(4,48,'DNS convierte un nombre de dominio en una dirección IP cuando el navegador necesita localizar un servidor.',true,'Es una de las primeras acciones al abrir una web.','Es verdadero: la guía indica que DNS permite resolver el nombre a una IP antes de establecer la comunicación.','Navegación web','-extra'),
+    m(4,48,'¿Qué capa finalmente envía los bits por el cable o por el aire al navegar por una web?',['Física (1)','Transporte (4)','Aplicación (7)'],0,'Es la capa más baja del modelo.','La capa física transmite los bits mediante señales sobre el medio.',['','Transporte organiza segmentos, no transmite directamente las señales físicas.','Aplicación prepara solicitudes y servicios, pero no es quien transmite señales eléctricas u ópticas.'],'Navegación web','-extra')
+  ];
+  window.BANCO_PREGUNTAS = Object.freeze(bank.map(q=>Object.freeze(q)));
+})();
+
+</script>
+<script>
+(function () {
+  'use strict';
+  const BANK = window.BANCO_PREGUNTAS || [];
+  const KEY = 'practicar-rc34-history-v1';
+  const UNIT_NAMES = {1:'Teleprocesamiento',2:'Protocolos',3:'Redes de computadoras',4:'Modelo OSI'};
+  const $ = id => document.getElementById(id);
+  let chosenType = 'mixed';
+  let chosenCount = '20';
+  let session = null;
+  let record = readRecord();
+
+  function readRecord() {
+    try { const raw=localStorage.getItem(KEY); return raw ? JSON.parse(raw) : {attempts:0,best:0,last:null}; }
+    catch { return {attempts:0,best:0,last:null}; }
+  }
+  function saveRecord() { try { localStorage.setItem(KEY, JSON.stringify(record)); } catch {} }
+  function selectedUnits() { return [...document.querySelectorAll('input[name="unit"]:checked')].map(el=>Number(el.value)); }
+  function filteredBank() { const units=new Set(selectedUnits()); return BANK.filter(q=>units.has(q.unit)&&(chosenType==='mixed'||q.type===chosenType)); }
+  function shuffle(items) { const x=[...items]; for (let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]];} return x; }
+  function formatTime(ms) { const secs=Math.max(0,Math.floor(ms/1000)); return `${String(Math.floor(secs/60)).padStart(2,'0')}:${String(secs%60).padStart(2,'0')}`; }
+  function show(screen) {
+    for (const id of ['start-screen','quiz-screen','result-screen']) $(id).hidden = id!==screen;
+    window.scrollTo({top:0,behavior:'instant'});
+  }
+  function el(tag,cls,text) { const node=document.createElement(tag); if(cls)node.className=cls; if(text!==undefined)node.textContent=text; return node; }
+  function paintConfig() {
+    for (const b of document.querySelectorAll('#type-options button')) {
+      const yes=b.dataset.type===chosenType;b.classList.toggle('selected',yes);b.setAttribute('aria-pressed',String(yes));
+    }
+    for (const b of document.querySelectorAll('#count-options button')) {
+      const yes=b.dataset.count===chosenCount;b.classList.toggle('selected',yes);b.setAttribute('aria-pressed',String(yes));
+    }
+    const length=filteredBank().length;
+    $('available-note').textContent=`${length} disponibles`;
+    $('start-btn').disabled=length===0;
+    for(const b of document.querySelectorAll('#count-options button')) {
+      b.disabled=b.dataset.count!=='all'&&Number(b.dataset.count)>length;
+    }
+    if (chosenCount!=='all' && Number(chosenCount)>length) {
+      chosenCount='all';
+      paintConfig();
+      return;
+    }
+    $('config-error').hidden=true;
+  }
+  function paintHistory() {
+    const last=record.last;
+    if(!last){$('history-title').textContent='Aún no hay resultados';$('history-copy').textContent='Completa un examen para ver tu rendimiento.';}
+    else {
+      $('history-title').textContent=`Última sesión: ${Math.round(100*last.correct/last.total)} % de aciertos`;
+      $('history-copy').textContent=`${last.correct} de ${last.total} correctas · Mejor nota: ${record.best} % · ${record.attempts} práctica(s)`;
+    }
+    $('review-last-btn').disabled=!last||!last.mistakes?.length;
+    $('question-count').textContent=BANK.length;
+  }
+  function chooseQuestions(pool,max) {
+    // Alterna unidades y tipos para equilibrar contenidos y no repetir la misma unidad continuamente.
+    const groups=new Map();
+    for(const q of pool){const key=`${q.unit}-${q.type}`;if(!groups.has(key))groups.set(key,[]);groups.get(key).push(q);}
+    for(const [key,items] of groups)groups.set(key,shuffle(items));
+    const keys=shuffle([...groups.keys()]);
+    const result=[];
+    while(result.length<max){
+      let pushed=false;
+      for(const key of shuffle(keys)){
+        const next=groups.get(key).pop();
+        if(next){result.push(next);pushed=true;}
+        if(result.length>=max)break;
+      }
+      if(!pushed)break;
+    }
+    return result;
+  }
+  function startPractice(reviewIds) {
+    let pool,chosen;
+    if(Array.isArray(reviewIds)) {
+      const ids=new Set(reviewIds);
+      pool=BANK.filter(q=>ids.has(q.id));
+      chosen=pool.length;
+    } else {
+      pool=filteredBank();
+      chosen=chosenCount==='all'?pool.length:Math.min(Number(chosenCount),pool.length);
+    }
+    if(!pool.length||!chosen){$('config-error').textContent='Selecciona al menos una unidad con preguntas disponibles.';$('config-error').hidden=false;show('start-screen');return;}
+    if(session?.ticker)clearInterval(session.ticker);
+    session={questions:chooseQuestions(pool,chosen),index:0,answers:[],hinted:new Set(),started:Date.now(),ticker:null,review:Array.isArray(reviewIds)};
+    session.ticker=setInterval(()=>{$('timer').textContent=formatTime(Date.now()-session.started);},1000);
+    $('timer').textContent='00:00';
+    show('quiz-screen'); renderQuestion();
+  }
+  function stats() {
+    const correct=session.answers.filter(a=>a.correct).length;
+    $('score-correct').textContent=correct;
+    $('score-wrong').textContent=session.answers.length-correct;
+    $('hints-used').textContent=session.hinted.size;
+  }
+  function renderQuestion() {
+    const q=session.questions[session.index];
+    if(!q){finishPractice();return;}
+    $('question-category').textContent=`UNIDAD ${['','I','II','III','IV'][q.unit]} · ${UNIT_NAMES[q.unit]}`;
+    $('question-type').textContent=q.type==='vf'?'Verdadero o falso':'Triple elección';
+    $('question-source').textContent=`Tema: ${q.topic} · Basada en la pregunta ${q.ref} de la guía`;
+    $('question-title').textContent=q.question;
+    $('progress-label').textContent=`Pregunta ${session.index+1} / ${session.questions.length}`;
+    $('progress-fraction').textContent=String(session.index+1).padStart(2,'0');
+    $('progress-total').textContent=`/ ${session.questions.length}`;
+    const progress=Math.round((session.answers.length/session.questions.length)*100);
+    $('progress-fill').style.width=`${progress}%`;
+    $('progress-track').setAttribute('aria-valuenow',String(progress));
+    const choices=$('answers');choices.replaceChildren();
+    q.options.forEach((choice,i)=>{
+      const button=el('button','answer-option');button.type='button';button.dataset.index=String(i);
+      const letter=el('span','option-letter',q.type==='vf'?(i===0?'V':'F'):String.fromCharCode(65+i));
+      letter.setAttribute('aria-hidden','true');button.append(letter,el('span','answer-text',choice));
+      button.addEventListener('click',()=>answerQuestion(i));choices.appendChild(button);
+    });
+    $('hint-btn').disabled=false;$('hint-btn').setAttribute('aria-expanded','false');
+    $('hint-btn').querySelector('span').textContent='Necesito una pista';
+    $('hint-text').textContent=q.hint;$('hint-text').hidden=true;$('hint-block').hidden=false;
+    $('feedback').hidden=true;$('feedback').classList.remove('is-wrong');
+    $('next-btn').disabled=true;$('next-btn').firstChild.textContent=session.index===session.questions.length-1?'Ver resultados ':'Continuar ';
+    $('question-footer-note').textContent='Selecciona una respuesta para continuar.';
+    stats();
+  }
+  function showHint() {
+    if(!session)return;
+    const q=session.questions[session.index];
+    if(session.answers.some(a=>a.id===q.id))return;
+    const hint=$('hint-text');const opening=hint.hidden;
+    hint.hidden=!opening;$('hint-btn').setAttribute('aria-expanded',String(opening));
+    $('hint-btn').querySelector('span').textContent=opening?'Ocultar pista':'Necesito una pista';
+    if(opening)session.hinted.add(q.id);
+    stats();
+  }
+  function answerQuestion(selected) {
+    if(!session)return;
+    const q=session.questions[session.index];
+    if(session.answers.length>session.index)return;
+    const correct=selected===q.answer;
+    session.answers.push({id:q.id,unit:q.unit,selected,correct,usedHint:session.hinted.has(q.id)});
+    for(const button of $('answers').children){
+      const i=Number(button.dataset.index);
+      button.disabled=true;button.classList.add('locked');
+      if(i===q.answer)button.classList.add('correct');
+      if(i===selected&&!correct)button.classList.add('wrong');
+      if(i===selected)button.setAttribute('aria-pressed','true');
+    }
+    $('hint-block').hidden=true;
+    const box=$('feedback');box.hidden=false;box.classList.toggle('is-wrong',!correct);
+    $('feedback-icon').textContent=correct?'✓':'×';
+    $('feedback-title').textContent=correct?'¡Correcto! Muy bien razonado.':'Respuesta incorrecta, vamos a entenderla.';
+    if(correct){
+      $('feedback-reason').textContent=`Elegiste «${q.options[selected]}». Es la opción adecuada.`;
+    }else if(q.type==='mc'&&q.reasons?.[selected]) {
+      $('feedback-reason').textContent=`Elegiste «${q.options[selected]}». ${q.reasons[selected]}`;
+    }else{
+      $('feedback-reason').textContent=`Marcaste «${q.options[selected]}», pero el enunciado es ${q.answer===0?'verdadero':'falso'}.`;
+    }
+    $('feedback-correct').textContent=q.options[q.answer];
+    $('feedback-explanation').textContent=q.explanation;
+    $('next-btn').disabled=false;
+    $('question-footer-note').textContent=correct?'Acertaste. Puedes continuar.':'La explicación te ayuda a recordar la próxima vez.';
+    const progress=Math.round(session.answers.length/session.questions.length*100);
+    $('progress-fill').style.width=`${progress}%`;
+    $('progress-track').setAttribute('aria-valuenow',String(progress));
+    stats();
+  }
+  function nextQuestion() {
+    if(!session||session.answers.length!==session.index+1)return;
+    session.index++;
+    if(session.index>=session.questions.length)finishPractice();else {renderQuestion();window.scrollTo({top:0,behavior:'instant'});}
+  }
+  function appendMistake(parent,q,answer) {
+    const item=el('article','mistake-item');
+    item.appendChild(el('span','mistake-meta',`UNIDAD ${['','I','II','III','IV'][q.unit]} · ${q.topic} · PREGUNTA ${q.ref}`));
+    item.appendChild(el('h4','',q.question));
+    const chosen=el('p');chosen.appendChild(el('strong','wrong-answer-label','Tu respuesta: '),document.createTextNode(q.options[answer.selected]));
+    const actual=el('p');actual.appendChild(el('strong','right-answer-label','Respuesta correcta: '),document.createTextNode(q.options[q.answer]));
+    item.append(chosen,actual);
+    if(q.type==='mc'&&q.reasons?.[answer.selected])item.appendChild(el('p','',`Por qué no: ${q.reasons[answer.selected]}`));
+    item.appendChild(el('p','',`Por qué es la correcta: ${q.explanation}`));
+    parent.appendChild(item);
+  }
+  function finishPractice() {
+    if(!session)return;
+    clearInterval(session.ticker);
+    const total=session.questions.length;
+    const correct=session.answers.filter(a=>a.correct).length;
+    const wrong=total-correct;
+    const percent=Math.round(correct/total*100);
+    const elapsed=Date.now()-session.started;
+    const mistakes=session.answers.filter(a=>!a.correct).map(a=>a.id);
+    record={attempts:(record.attempts||0)+1,best:Math.max(record.best||0,percent),last:{total,correct,mistakes,hints:session.hinted.size,elapsed,finishedAt:new Date().toISOString()}};
+    saveRecord();paintHistory();
+    $('results-title').textContent=percent===100?'¡Excelente! Examen perfecto.':percent>=80?'¡Muy buen resultado!':percent>=60?'¡Vas por buen camino!':'Cada error es una oportunidad de aprender.';
+    $('results-subtitle').textContent=`Contestaste ${total} preguntas y acertaste ${correct}. ${wrong?'Repasa tus dudas para mejorar en el siguiente intento.':'Dominas todas las preguntas de esta sesión.'}`;
+    $('final-percent').textContent=`${percent}%`;
+    $('score-ring').style.background=`conic-gradient(var(--teal) ${percent}%, #26354b ${percent}%)`;
+    $('final-correct').textContent=correct;$('final-wrong').textContent=wrong;
+    $('final-time').textContent=formatTime(elapsed);$('final-hints').textContent=session.hinted.size;
+    $('retry-wrong-btn').disabled=wrong===0;
+    $('review-count').textContent=`${wrong} error${wrong===1?'':'es'}`;
+    const unitSummary=$('unit-summary');unitSummary.replaceChildren();
+    const units=[...new Set(session.questions.map(q=>q.unit))].sort();
+    for(const unit of units){
+      const group=session.answers.filter(a=>a.unit===unit);
+      const ok=group.filter(a=>a.correct).length;
+      const fraction=Math.round(ok/group.length*100);
+      const box=el('div','summary-box');box.appendChild(el('span','',`Unidad ${['','I','II','III','IV'][unit]}`));
+      box.appendChild(el('strong','',`${ok} / ${group.length}`));
+      const track=el('div','summary-bar');const fill=el('span');fill.style.width=`${fraction}%`;track.appendChild(fill);box.appendChild(track);unitSummary.appendChild(box);
+    }
+    const list=$('mistakes-list');list.replaceChildren();
+    if(wrong){list.appendChild(el('h3','mistakes-title','Preguntas que respondiste incorrectamente'));
+      const lookup=new Map(session.questions.map(q=>[q.id,q]));
+      for(const a of session.answers.filter(x=>!x.correct))appendMistake(list,lookup.get(a.id),a);
+    }else list.appendChild(el('p','no-mistakes','No hubo errores en esta sesión. ¡Puedes probar otra unidad o aumentar la cantidad de preguntas!'));
+    show('result-screen');
+  }
+  function home() { if(session?.ticker)clearInterval(session.ticker);session=null;paintHistory();show('start-screen'); }
+  function init() {
+    if(!BANK.length){$('config-error').textContent='No se pudo cargar el banco de preguntas. Comprueba que preguntas.js esté junto a index.html.';$('config-error').hidden=false;$('start-btn').disabled=true;return;}
+    document.querySelectorAll('input[name="unit"]').forEach(input=>input.addEventListener('change',paintConfig));
+    document.querySelectorAll('#type-options button').forEach(btn=>btn.addEventListener('click',()=>{chosenType=btn.dataset.type;paintConfig();}));
+    document.querySelectorAll('#count-options button').forEach(btn=>btn.addEventListener('click',()=>{chosenCount=btn.dataset.count;paintConfig();}));
+    $('start-btn').addEventListener('click',()=>startPractice());
+    $('hint-btn').addEventListener('click',showHint);
+    $('next-btn').addEventListener('click',nextQuestion);
+    $('exit-btn').addEventListener('click',()=>{if(window.confirm('¿Salir del examen? Se perderán las respuestas de esta sesión.'))home();});
+    $('home-btn').addEventListener('click',home);
+    $('new-exam-btn').addEventListener('click',home);
+    $('review-last-btn').addEventListener('click',()=>{if(record.last?.mistakes?.length)startPractice(record.last.mistakes);});
+    $('retry-wrong-btn').addEventListener('click',()=>{if(record.last?.mistakes?.length)startPractice(record.last.mistakes);});
+    document.addEventListener('keydown',event=>{
+      if(!session||$('quiz-screen').hidden||event.altKey||event.ctrlKey||event.metaKey||event.target.closest('input,textarea'))return;
+      const q=session.questions[session.index];
+      if(session.answers.length===session.index){
+        const choices={'1':0,'2':1,'3':2};
+        if(q.type==='vf'){choices.v=0;choices.f=1;}
+        const i=choices[event.key.toLowerCase()];
+        if(i!==undefined&&i<q.options.length){event.preventDefault();answerQuestion(i);}
+      }else if(event.key==='Enter'&&!event.repeat){event.preventDefault();nextQuestion();}
+    });
+    paintConfig();paintHistory();show('start-screen');
+  }
+  init();
+})();
+
+</script>
+</body>
+</html>
